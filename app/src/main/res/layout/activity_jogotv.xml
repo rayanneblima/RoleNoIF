@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/background"
+    tools:context=".Jogo_TV">
+
+    <TextView
+        android:id="@+id/txt_idPerg"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="14dp"
+        android:fontFamily="cursive"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/txt_Perg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_Perg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="51dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_respA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_idPerg"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_respA"
+        android:layout_width="288dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toTopOf="@+id/btn_respB"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_Perg"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_respB"
+        android:layout_width="288dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toTopOf="@+id/btn_respC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_respA"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_respC"
+        android:layout_width="288dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="20dp"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toTopOf="@+id/btn_respD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_respB"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_respD"
+        android:layout_width="288dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="51dp"
+        android:background="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textColor="@color/cardview_light_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_respC"
+        tools:ignore="MissingConstraints" />
+
+
+</android.support.constraint.ConstraintLayout>

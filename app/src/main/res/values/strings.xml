@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rolê no IF</string>
+    <string name="txt_Titulo">Teste Vocacional</string>
+    <string name="txt_Resumo">Este teste tem por objetivo identificar aptidões a partir de alguns traços da sua personalidade.</string>
+    <string name="btn_Iniciar">INICIAR</string>
+
+</resources>
