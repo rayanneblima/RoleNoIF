@@ -1,7 +1,20 @@
 <resources>
     <string name="app_name">Rolê no IF</string>
-    <string name="txt_Titulo">Teste Vocacional</string>
-    <string name="txt_Resumo">Este teste tem por objetivo identificar aptidões a partir de alguns traços da sua personalidade.</string>
+    <string name="facebook_app_id">258187838100710</string>
+    <string name="fb_login_protocol_scheme">fb2201511016836012</string>
+
+    <string name="cancel_login">Operação cancelada.</string>
+    <string name="error_login">Erro ao logar.</string>
+    <string name="bem_vindo">Seja Bem-Vindo!</string>
+    <string name="suc_cadastro">Cadastrado com sucesso.</string>
+
+    <string name="btn_TV">Qual Curso Técnico Integrado mais combina com você?</string>
+    <string name="btn_Agro">Conheça o curso de agropecuária</string>
+    <string name="btn_Tour">Tour pelo IF</string>
+    <string name="btn_Visita">Agende uma visita</string>
+
+    <string name="txt_Titulo">Qual Curso Técnico Integrado mais combina com você?</string>
+    <string name="txt_Resumo">Dúvida sobre qual curso escolher? Faça o teste e descubra qual sugestão temos pra você.</string>
     <string name="btn_Iniciar">INICIAR</string>
 
 </resources>

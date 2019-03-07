@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="WebViewLayout">
+
+            <TextView
+                android:layout_marginTop="10sp"
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MATÉRIAS DA AGROPECUÁRIA"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:textSize="20sp"
+                android:layout_gravity="center" />
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_marginTop="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btn_Perg1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@drawable/botao2"
+                android:layout_marginTop="10sp"
+                android:drawableTop="@drawable/primeiro"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
+            <LinearLayout
+                android:id="@+id/lyt_btnPerg1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:textColor="@color/secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="
+1 - Língua Portuguesa, Literatura e Redação\n
+2 – Artes\n
+3 – Educação Física\n
+4 – Geografia\n
+5 – História\n
+6 – Sociologia\n
+7 – Filosofia\n
+8 – Química\n
+9 – Biologia\n
+10 – Matemática\n
+11 – Física\n
+12 – Inglês\n\n
+Matérias do Técnico\n
+13 - Tecnologia de Alimentos (Processamento de Carnes, Leite e Vegetais)\n
+14 – Planejamento e Projeto de Instalações Rurais\n
+15 – Introdução aos estudos e práticas em Agropecuária (IEPA)\n
+16 - Agricultura I (Solos + Biologia Vegetal, Propagação de Plantas e Jardinagem)"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Perg2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/botao2"
+                android:layout_marginTop="10sp"
+                android:drawableTop="@drawable/segundo"/>
+
+            <LinearLayout
+                android:id="@+id/lyt_btnPerg2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:textColor="@color/secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="
+1 - Língua Portuguesa Literatura e Redação\n
+2 – Educação Física\n
+3 – Geografia\n
+4 – História\n
+5 – Sociologia\n
+6 – Filosofia\n
+7 – Química\n
+8 – Biologia\n
+9 – Matemática\n
+10 – Física\n
+11 – Inglês\n\n
+Matérias do Técnico\n
+1 - Zootecnia I (Suinocultura + Avicultura)\n
+2 - Agricultura II (Fitossanidade, Olericultura e Culturas anuais)\n
+3 – Mecanização agrícola"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Perg3"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/botao2"
+                android:layout_marginTop="10sp"
+                android:drawableTop="@drawable/terceiro" />
+
+            <LinearLayout
+                android:id="@+id/lyt_btnPerg3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:textColor="@color/secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="
+1 - Língua Portuguesa, Literatura e Redação\n
+2 – Educação Física\n
+3 – Geografia\n
+4 – História\n
+5 – Sociologia\n
+6 – Filosofia\n
+7 – Química\n
+8 – Biologia\n
+9 – Matemática\n
+10 – Física\n
+11 – Inglês\n\n
+Matérias do Técnico\n
+1 – Fruticultura\n
+2 – Silvicultura e cafeicultura\n
+3 - Zootecnia II (Bovinocultura de Leite e Corte)\n
+4 – Irrigação\n
+5 - Agroecologia, Educação e Licenciamento Ambiental\n
+6 - Administração e Extensão Rural\n\n
+Matérias Optativas\n
+1 – Libras\n
+2 – Língua espanhola\n\n
+IMPORTANTE: Para obter o diploma, é obrigatório fazer ESTÁGIO.\n\n"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

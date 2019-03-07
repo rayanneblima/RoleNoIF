@@ -1,154 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:layout_editor_absoluteY="81dp">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/txtNome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:paddingTop="20sp"
+        android:text="Técnico em Agropecuária"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+    <Button
+        android:id="@+id/btn6Coisas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/botao"
+        android:ellipsize="start"
+        android:text="6 coisas que você precisa saber"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="PERGUNTAS FREQUENTES SOBRE A CARREIRA DO TÉCNICO EM AGROPECUÁRIA"
-                android:textStyle="bold"
-                android:fontFamily="sans-serif"
-                android:textSize="20dp"
-                android:textAlignment="center" />
+    <Button
+        android:id="@+id/btn_materiasAgro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/botao"
+        android:text="Matérias"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn6Coisas" />
 
-            <Button
-                android:id="@+id/btn_Perg1"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="1 - Quais as atividades desempenhadas por esse profissional?" />
+    <Button
+        android:id="@+id/btnDepoimentos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/botao"
+        android:text="Depoimentos"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_materiasAgro" />
 
-            <LinearLayout
-                android:id="@+id/lyt_btnPerg1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
+    <Button
+        android:id="@+id/btn_CarreiraAgro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/botao"
+        android:text="Carreira"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDepoimentos" />
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Entre as principais atividades do profissional técnico de agropecuária, podemos citar:
-•	Empreendimento e administração de negócios rurais.
-•	Produção de alimentos.
-•	Controle de qualidade de produtos em propriedades rurais e agroindustriais.
-•	Assessoria técnica ao agricultor.
-•	Assessoria em projetos de pesquisa de sistemas de produção agropecuária e agroindustrial.
-•	Supervisão do manejo de matérias primas e processos de produção agropecuários e industriais.
-•	Operação de projetos agropecuários e industriais
-•	Acompanhamento e fiscalização de projetos agropecuários e agroindustriais.
-•	Elaboração, aplicação e monitoramento de programas preventivos de sanitização na produção animal, vegetal e
-•	rurais.
-•	Atuação em programas de assistência técnica agroindustrial.
-•	Fiscalização de produtos de origem vegetal, animal e agroindustrial.
-•	Medição, demarcação e levantamentos topográficos, extensão rural e pesquisa."
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="18dp"
-                    android:textAlignment="center"
-                    android:visibility="visible" />
-            </LinearLayout>
+    <Button
+        android:id="@+id/btnRotina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/botao"
+        android:text="Rotina dos Alunos"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_CarreiraAgro" />
 
-            <Button
-                android:id="@+id/btn_Perg2"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="2 - Como está o mercado de trabalho para essa profissão?" />
+    <Button
+        android:id="@+id/btnConverse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="46dp"
+        android:background="@drawable/botao"
+        android:text="Converse com um aluno"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRotina" />
 
-            <LinearLayout
-                android:id="@+id/lyt_btnPerg2"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/textView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="O agronegócio é responsável por mais de 23,5% do Produto Interno Bruto (PIB) brasileiro e estudos do Ministério da Agricultura apontam um aumento da produtividade nas zonas rurais do país até, pelo menos, 2022. Esse crescimento demanda uma grande quantidade de profissionais qualificados que possam atuar na produção, gestão, processamento e distribuição de produtos agropecuários. Com isso, podemos afirmar que o mercado de trabalho para o profissional técnico da agropecuária é favorável."
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="18dp"
-                    android:textAlignment="center"
-                    android:visibility="visible" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_Perg3"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="3 - Qual a média salarial inicial para esse profissional?" />
-
-            <LinearLayout
-                android:id="@+id/lyt_btnPerg3"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="O profissional de agropecuária tem várias oportunidades de carreira, podendo atuar em:
-•	Institutos de pesquisa
-•	Propriedades rurais
-•	Órgãos governamentais
-•	Empresas comerciais
-•	Estabelecimentos agroindustriais
-•	Empresas de produção e assistência técnica de maquinário e tecnologias para produção agropecuária
-•	Parques e reservas naturais"
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="18dp"
-                    android:textAlignment="center"
-                    android:visibility="visible" />
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btn_Perg4"
-                style="@style/Widget.AppCompat.Button.Borderless"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="4 - Qual a média salarial inicial para esse profissional?" />
-
-            <LinearLayout
-                android:id="@+id/lyt_btnPerg4"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:visibility="gone">
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Segundo pesquisa salarial do site de empregos Catho em 2018, um técnico em agropecuária tem ganho médio nacional inicial de R$ 1.992,43.  Já concursos públicos para profissionais de nível técnico, como por exemplo, Agente de Atividades Agropecuárias e Agente de Inspeção Sanitária e Industrial de Produtos de Origem Animal (AISIPOA), oferecem salários iniciais de R$ 6.600,00, segundo o Ministério da Agricultura, Pecuária e Abastecimento em pesquisa de 2018."
-                    android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="18dp"
-                    android:textAlignment="center"
-                    android:visibility="visible" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

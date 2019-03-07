@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PERGUNTAS FREQUENTES SOBRE A CARREIRA DO TÉCNICO EM AGROPECUÁRIA"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:textSize="20sp"
+                android:textAlignment="center" />
+
+            <Button
+                android:id="@+id/btn_Perg1"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@drawable/botao2"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:layout_marginTop="10sp"
+                android:textSize="15sp"
+                android:text="1 - Quais as atividades desempenhadas por esse profissional?" />
+
+            <LinearLayout
+                android:id="@+id/lyt_btnPerg1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:textColor="@color/secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entre as principais atividades do profissional técnico de agropecuária, podemos citar:\n
+•	Empreendimento e administração de negócios rurais.\n
+•	Produção de alimentos.\n
+•	Controle de qualidade de produtos em propriedades rurais e agroindustriais.\n
+•	Assessoria técnica ao agricultor.\n
+•	Assessoria em projetos de pesquisa de sistemas de produção agropecuária e agroindustrial.\n
+•	Supervisão do manejo de matérias primas e processos de produção agropecuários e industriais.\n
+•	Operação de projetos agropecuários e industriais.\n
+•	Acompanhamento e fiscalização de projetos agropecuários e agroindustriais.\n
+•	Elaboração, aplicação e monitoramento de programas preventivos de sanitização na produção animal, vegetal e rurais.\n
+•	Atuação em programas de assistência técnica agroindustrial.\n
+•	Fiscalização de produtos de origem vegetal, animal e agroindustrial.\n
+•	Medição, demarcação e levantamentos topográficos, extensão rural e pesquisa.\n"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Perg2"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@drawable/botao2"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:textSize="15sp"
+                android:layout_marginTop="10sp"
+                android:text="2 - Como está o mercado de trabalho para essa profissão?" />
+
+            <LinearLayout
+                android:id="@+id/lyt_btnPerg2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:textColor="@color/secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O agronegócio é responsável por mais de 23,5% do Produto Interno Bruto (PIB) brasileiro e estudos do Ministério da Agricultura apontam um aumento da produtividade nas zonas rurais do país até, pelo menos, 2022. Esse crescimento demanda uma grande quantidade de profissionais qualificados que possam atuar na produção, gestão, processamento e distribuição de produtos agropecuários. Com isso, podemos afirmar que o mercado de trabalho para o profissional técnico da agropecuária é favorável."
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Perg3"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@drawable/botao2"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:textSize="15sp"
+                android:layout_marginTop="10sp"
+                android:text="3 - Onde poderá atuar?" />
+
+            <LinearLayout
+                android:id="@+id/lyt_btnPerg3"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:textColor="@color/secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="O profissional de agropecuária tem várias oportunidades de carreira, podendo atuar em:\n
+•	Institutos de pesquisa\n
+•	Propriedades rurais\n
+•	Órgãos governamentais\n
+•	Empresas comerciais\n
+•	Estabelecimentos agroindustriais\n
+•	Empresas de produção e assistência técnica de maquinário e tecnologias para produção agropecuária\n
+•	Parques e reservas naturais\n"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18sp"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_Perg4"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:background="@drawable/botao2"
+                android:layout_width="match_parent"
+                android:layout_height="60sp"
+                android:textSize="15sp"
+                android:layout_marginTop="10sp"
+                android:text="4 - Qual a média salarial inicial para esse profissional?" />
+
+            <LinearLayout
+                android:id="@+id/lyt_btnPerg4"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:textColor="@color/secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Segundo pesquisa salarial do site de empregos Catho em 2018, um técnico em agropecuária tem ganho médio nacional inicial de R$ 1.992,43.\nJá concursos públicos para profissionais de nível técnico, como por exemplo, Agente de
+                    Atividades Agropecuárias e Agente de Inspeção Sanitária e Industrial de Produtos de Origem Animal (AISIPOA), oferecem salários iniciais de R$ 6.600,00, segundo o Ministério da Agricultura, Pecuária e Abastecimento em pesquisa de 2018.\n"
+                    android:textAppearance="@style/TextAppearance.AppCompat"
+                    android:textSize="18dp"
+                    android:textAlignment="center"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

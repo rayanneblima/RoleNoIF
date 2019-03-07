@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="DEPOIMENTOS DE ALUNOS DA AGROPECUÁRIA"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <WebView
+                android:id="@+id/webview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp" />
+
+            <TextView
+                android:id="@+id/text00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="-Luiz Henrique"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <WebView
+                android:id="@+id/webview2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10sp" />
+
+            <TextView
+                android:id="@+id/text0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="-Carlos Henrique"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="O nosso curso pega um pouco de cada um, né? E tem uma boa área de trabalho. Porque... tipo assim...trabalho não vai faltar, se a gente procurar"
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="-Renato, 16 anos"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="Quando a pessoa sai daqui, ela pode ajudar a fazenda a produzir mais."
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="-Misleine, 15 anos"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="Nas aulas do Médio, sempre buscaram deixar tudo elaborado, esclarecido. Em relação às aulas práticas, o uso de laboratórios infelizmente falta uma melhor estrutura e material. Mas, com o curso, eu pude ver que quero fazer Agronomia e pretendo continuar na área, porque futuramente eu quero ser um grande fazendeiro."
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="-Ygor, 17 anos"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="Ensino Médio de ótima qualidade. Professores formados com mestrado e nos dão bom embasamento para futuro curso superior na área."
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="-Igor, 19 anos"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="Houve uma ótima recepção, com apresentação do campus e do curso. O coordenador do curso nos acolheu muito bem. Estrutura é ótima, embora faltasse alguns materiais em aulas."
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="-Weverton, 18 anos"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/text11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:text="Boas técnicas de ensino, com bastante aula prática. O curso me ajudou a escolher a área que desejo atuar."
+                android:textSize="18sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:fontFamily="sans-serif"
+                android:padding="10sp"
+                android:paddingBottom="10sp"
+                android:text="-Fábio, 18 anos"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

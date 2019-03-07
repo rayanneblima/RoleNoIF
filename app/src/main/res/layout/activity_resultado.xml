@@ -5,130 +5,155 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background"
-    tools:context=".Resultado"
+    tools:context=".TesteVocacional.Resultado"
     tools:layout_editor_absoluteY="81dp">
 
-    <TextView
-        android:id="@+id/txt_Texto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Você tem mais aptidão para "
-        android:textSize="18dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/txt_Result"
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/txt_Result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="CURSO TAL"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/txt_Texto"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="17dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_Result"
         tools:ignore="MissingConstraints">
 
-        <LinearLayout
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Você combina com o curso:"
+            android:textSize="18sp" />
 
-            <ImageButton
-                android:id="@+id/imageButton1"
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/tmb" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif"
+            android:text="(Clique abaixo e conheça mais)"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
 
-            <ImageButton
-                android:id="@+id/imgBtn_TecAgro"
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/ta" />
 
-            <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/tf" />
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10sp"
+            android:background="@color/divider" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30sp"
+            android:layout_marginBottom="20sp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_Texto2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-smallcaps"
+                android:text="Mas também pode gostar do curso de  "
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/botao"
+                android:fontFamily="sans-serif-smallcaps"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
         </LinearLayout>
-    </HorizontalScrollView>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginBottom="211dp"
-        android:fontFamily="sans-serif-smallcaps"
-        android:text="Conheça também os cursos de Agrárias do IF - Rio Pomba"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <HorizontalScrollView
-        android:id="@+id/horizontalScrollView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        android:paddingTop="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-smallcaps"
+            android:text="Clique para conhecer os cursos Técnicos do IF - Rio Pomba: "
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:fadeScrollbars="false"
+            android:fillViewport="true"
+            android:scrollbarThumbHorizontal="@drawable/scrollbar_thumb">
 
-            <ImageButton
-                android:id="@+id/imageButton9"
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/tmb" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
 
-            <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/ta" />
+                <Button
+                    android:id="@+id/btnAgro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ta"
+                    android:scaleType="centerInside" />
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/tf" />
+                <Button
+                    android:id="@+id/btnMeiB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tmb" />
 
-        </LinearLayout>
-    </HorizontalScrollView>
+                <Button
+                    android:id="@+id/btnZoo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tz"
+                    android:scaleType="centerInside" />
+
+                <Button
+                    android:id="@+id/btnInf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ti"
+                    android:scaleType="centerInside" />
+
+                <Button
+                    android:id="@+id/btnAlim"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/tal"
+                    android:scaleType="centerInside" />
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
