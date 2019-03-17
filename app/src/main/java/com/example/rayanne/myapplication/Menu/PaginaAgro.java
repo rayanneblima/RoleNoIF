@@ -134,6 +134,7 @@ public class PaginaAgro extends AppCompatActivity {
         foto.setImageResource(img[posicao[0]]);
         descricao.setText(desc[posicao[0]]);
 
+
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

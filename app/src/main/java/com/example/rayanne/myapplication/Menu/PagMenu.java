@@ -33,7 +33,7 @@ public class PagMenu extends AppCompatActivity {
     }
 
     private void iniciarAgro(){
-        Button btn_Agro = (Button) findViewById(R.id.btn_Agro);
+        Button btn_Agro = findViewById(R.id.btn_Agro);
 
         btn_Agro.setOnClickListener(new View.OnClickListener() {
 
@@ -46,7 +46,9 @@ public class PagMenu extends AppCompatActivity {
     }
 
     private void iniciarTour(){
-        Button btn_Tour = (Button) findViewById(R.id.btn_Tour);
+        Button btn_Tour = findViewById(R.id.btn_Tour);
+
+        btn_Tour.setVisibility(View.GONE);
 
         btn_Tour.setOnClickListener(new View.OnClickListener() {
 
@@ -59,7 +61,7 @@ public class PagMenu extends AppCompatActivity {
     }
 
     private void agendarVisita(){
-        Button btn_Visita = (Button) findViewById(R.id.btn_Visita);
+        Button btn_Visita = findViewById(R.id.btn_Visita);
 
         btn_Visita.setOnClickListener(new View.OnClickListener() {
 
