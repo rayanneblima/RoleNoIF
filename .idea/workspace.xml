@@ -19,6 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c8c83556-faee-4e96-90da-6f7e4d9fdf35" name="Default" comment="Finalização do Protótipo&#10;&#10;*Necessário correção das fotos em &quot;Rotina dos Alunos&quot;*">
+      <change beforePath="" afterPath="$PROJECT_DIR$/masterRep.iml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileContent/fileContent.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.10.1/fileHashes/fileHashes.lock" />
