@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -139,6 +140,8 @@ public class PaginaAgro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 posicao[0]++;
+                if(posicao[0] > 8) posicao[0] = 0;
+                Log.d("Test", "" + posicao[0]);
                 foto.setImageResource(img[posicao[0]]);
                 descricao.setText(desc[posicao[0]]);
             }
@@ -148,6 +151,8 @@ public class PaginaAgro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 posicao[0]--;
+                if(posicao[0] < 0) posicao[0] = 8;
+                Log.d("Test", "" + posicao[0]);
                 foto.setImageResource(img[posicao[0]]);
                 descricao.setText(desc[posicao[0]]);
             }
