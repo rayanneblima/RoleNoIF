@@ -13,29 +13,32 @@ public class Tour extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tour);
-        exibirTour();
+       //setContentView(R.layout.activity_tour);
+        //exibirTour();
+
+        setContentView(R.layout.activity_tour2);
+        exibirVideo();
     }
 
-    private void exibirTour() {
-        mWebView = findViewById(R.id.webview);
-        /*WebSettings webSettings = mWebView.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        mWebView.loadUrl("https://kuula.co/share/7Y0Gn?fs=1&vr=0&thumbs=1&chromeless=0&logo=0");
-        mWebView.setWebViewClient(new WebViewClient(){
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url){
-                view.loadUrl(url);
-                return true;
-            }
+    /* private void exibirTour() {
+         mWebView = findViewById(R.id.webview);
+         /*WebSettings webSettings = mWebView.getSettings();
+         webSettings.setJavaScriptEnabled(true);
+         mWebView.loadUrl("https://kuula.co/share/7Y0Gn?fs=1&vr=0&thumbs=1&chromeless=0&logo=0");
+         mWebView.setWebViewClient(new WebViewClient(){
+             @Override
+             public boolean shouldOverrideUrlLoading(WebView view, String url){
+                 view.loadUrl(url);
+                 return true;
+             }
 
-            @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon){}
-            @Override
-            public void onPageFinished(WebView view, String url){}
-        });
-*/
-        WebSettings webSettings = mWebView.getSettings();
+             @Override
+             public void onPageStarted(WebView view, String url, Bitmap favicon){}
+             @Override
+             public void onPageFinished(WebView view, String url){}
+         });
+ */
+       /* WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setSupportZoom(false);
         //mWebView.loadUrl("http://google.com");
@@ -47,7 +50,7 @@ public class Tour extends AppCompatActivity {
         mWebView.loadData(html,"text/html", "UTF-8");
 
 
-    }
+    }*/
 
     @Override
     // Detectar cuando se presiona el botón de retroceso
@@ -59,5 +62,17 @@ public class Tour extends AppCompatActivity {
         }
     }
 
+    private void exibirVideo(){
+        WebView mWebView1 = findViewById(R.id.webview1);
+        WebSettings webSettings = mWebView1.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setSupportZoom(false);
+        String html = "<html>";
+        html += "<body>";
+        html += "<center><iframe width=\"match_parent\" height=\"wrap_content\" src=\"https://www.youtube.com/embed/piiDBySYwKc\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>";
+        html += "</center></body></html>";
 
+        mWebView1.loadData(html,"text/html", "UTF-8");
+
+    }
 }

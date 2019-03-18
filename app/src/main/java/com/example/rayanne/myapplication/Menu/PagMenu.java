@@ -48,8 +48,6 @@ public class PagMenu extends AppCompatActivity {
     private void iniciarTour(){
         Button btn_Tour = findViewById(R.id.btn_Tour);
 
-        btn_Tour.setVisibility(View.GONE);
-
         btn_Tour.setOnClickListener(new View.OnClickListener() {
 
             @Override
