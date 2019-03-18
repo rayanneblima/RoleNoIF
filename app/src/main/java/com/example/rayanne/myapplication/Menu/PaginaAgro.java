@@ -158,12 +158,12 @@ public class PaginaAgro extends AppCompatActivity {
             }
         });
 
-        close.setOnClickListener(new View.OnClickListener() {
+        /*close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MyDialog.cancel();
             }
-        });
+        });*/
 
         MyDialog.show();
     }
