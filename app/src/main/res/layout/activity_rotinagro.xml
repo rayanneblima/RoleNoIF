@@ -29,15 +29,6 @@
             android:id="@+id/next"
             android:layout_height="wrap_content" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_gravity="center|right"
-            android:text="Close"
-            android:layout_margin="5dp"
-            android:textStyle="bold"
-            android:id="@+id/close"
-            android:layout_height="wrap_content" />
-
     </FrameLayout>
 
     <ImageView
