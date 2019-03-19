@@ -62,9 +62,10 @@
 
         <Button
             android:id="@+id/entrarButton"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/botao"
             android:backgroundTint="@android:color/black"
             android:text="ENTRAR"
@@ -72,14 +73,15 @@
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:background="@drawable/botao"
             android:backgroundTint="#1a4cef"
             android:text="Entre com o FACEBOOK"
             android:textAllCaps="false"
-            android:textColor="#fff"/>
+            android:textColor="#fff" />
 
     </LinearLayout>
 

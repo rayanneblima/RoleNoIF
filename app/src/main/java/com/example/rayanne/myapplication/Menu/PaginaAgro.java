@@ -121,24 +121,23 @@ public class PaginaAgro extends AppCompatActivity {
         MyDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         MyDialog.setContentView(R.layout.activity_rotinagro);
 
-        //Button back = MyDialog.findViewById(R.id.back);
-        //Button next = MyDialog.findViewById(R.id.next);
-        Button close = MyDialog.findViewById(R.id.close);
-
+        final TextView qnt = MyDialog.findViewById(R.id.qnt);
         final ImageView foto = MyDialog.findViewById(R.id.foto);
         final TextView descricao = MyDialog.findViewById(R.id.descricao);
         final View viewGroup = MyDialog.findViewById(R.id.viewGroup);
         final int[] img = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5,
                 R.drawable.img6, R.drawable.img7, R.drawable.img8, R.drawable.img9};
 
-        final String[] desc = {"Alunos participando da I Mostra de Cursos e Profissões", "Aula de Fruticultura (3º ano)",
-                "Disciplina de Agricultura I (a turma estava cursando o 1º ano", "Disciplina de Introdução aos Estudos e Práticas em Agropecuária (IEPA) do 1º ano de curso",
-                "Disciplina de Zootecnia I (matéria do 2º ano)", "Equipe Agro3B recebendo medalha na Olimpíada Brasileira de Agropecuária",
-                "Evento GeAgro - palestra sobre tangerina Ponkan", "Medalha de bronze conquistada na Olimpíada Brasileira de Agropecuária",
-                "Prova prática da Olimpíada - Inseminação Artificial"};
+        final String[] desc = {"1 Alunos participando da I Mostra de Cursos e Profissões", "2 Aula de Fruticultura (3º ano)",
+                "3 Disciplina de Agricultura I (a turma estava cursando o 1º ano", "4 Disciplina de Introdução aos Estudos e Práticas em Agropecuária (IEPA) do 1º ano de curso",
+                "5 Disciplina de Zootecnia I (matéria do 2º ano)", "6 Equipe Agro3B recebendo medalha na Olimpíada Brasileira de Agropecuária",
+                "7 Evento GeAgro - palestra sobre tangerina Ponkan", "8 Medalha de bronze conquistada na Olimpíada Brasileira de Agropecuária",
+                "9 Prova prática da Olimpíada - Inseminação Artificial"};
 
         final int[] posicao = {0};
+        final int[] cont = {1};
 
+        qnt.setText("1/9");
         foto.setImageResource(img[posicao[0]]);
         descricao.setText(desc[posicao[0]]);
 
@@ -148,49 +147,24 @@ public class PaginaAgro extends AppCompatActivity {
             public void onSwipeLeft() {
                 // Se desliza da direta pra esquerda
                 posicao[0]++;
+                cont[0]++;
                 if(posicao[0] > 8) posicao[0] = 0;
-                Log.d("Test", "" + posicao[0]);
+                if(cont[0] > 9) cont[0] = 1;
+                qnt.setText(" " + cont[0] + "/9");
                 foto.setImageResource(img[posicao[0]]);
                 descricao.setText(desc[posicao[0]]);
             }
             public void onSwipeRight() {
                 // Se desliza da esquerda pra direita
                 posicao[0]--;
+                cont[0]--;
                 if(posicao[0] < 0) posicao[0] = 8;
-                Log.d("Test", "" + posicao[0]);
+                if(cont[0] < 1) cont[0] = 9;
+                qnt.setText(" " + cont[0] + "/9");
                 foto.setImageResource(img[posicao[0]]);
                 descricao.setText(desc[posicao[0]]);
             }
         });
-
-        /*next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                posicao[0]++;
-                if(posicao[0] > 8) posicao[0] = 0;
-                Log.d("Test", "" + posicao[0]);
-                foto.setImageResource(img[posicao[0]]);
-                descricao.setText(desc[posicao[0]]);
-            }
-        });
-
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                posicao[0]--;
-                if(posicao[0] < 0) posicao[0] = 8;
-                Log.d("Test", "" + posicao[0]);
-                foto.setImageResource(img[posicao[0]]);
-                descricao.setText(desc[posicao[0]]);
-            }
-        });
-        
-        /*close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyDialog.cancel();
-            }
-        });*/
 
         MyDialog.show();
     }
