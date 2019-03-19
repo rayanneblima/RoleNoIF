@@ -124,11 +124,11 @@ public class PaginaAgro extends AppCompatActivity {
         final int[] img = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5,
                 R.drawable.img6, R.drawable.img7, R.drawable.img8, R.drawable.img9};
 
-        final String[] desc = {"0 Alunos participando da I Mostra de Cursos e Profissões", "1 Aula de Fruticultura (3º ano)",
-                "2 Disciplina de Agricultura I (a turma estava cursando o 1º ano", "3 Disciplina de Introdução aos Estudos e Práticas em Agropecuária (IEPA) do 1º ano de curso",
-                "4 Disciplina de Zootecnia I (matéria do 2º ano)", "5 Equipe Agro3B recebendo medalha na Olimpíada Brasileira de Agropecuária",
-                "6 Evento GeAgro - palestra sobre tangerina Ponkan", "7 Medalha de bronze conquistada na Olimpíada Brasileira de Agropecuária",
-                "8 Prova prática da Olimpíada - Inseminação Artificial"};
+        final String[] desc = {"Alunos participando da I Mostra de Cursos e Profissões", "Aula de Fruticultura (3º ano)",
+                "Disciplina de Agricultura I (a turma estava cursando o 1º ano", "Disciplina de Introdução aos Estudos e Práticas em Agropecuária (IEPA) do 1º ano de curso",
+                "Disciplina de Zootecnia I (matéria do 2º ano)", "Equipe Agro3B recebendo medalha na Olimpíada Brasileira de Agropecuária",
+                "Evento GeAgro - palestra sobre tangerina Ponkan", "Medalha de bronze conquistada na Olimpíada Brasileira de Agropecuária",
+                "Prova prática da Olimpíada - Inseminação Artificial"};
 
         final int[] posicao = {0};
 

@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.rayanne.myapplication.Menu.PagMenu;
-import com.example.rayanne.myapplication.Menu.PaginaAgro;
 import com.example.rayanne.myapplication.R;
 
 public class Resultado extends AppCompatActivity {

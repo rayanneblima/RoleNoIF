@@ -1,6 +1,5 @@
 package com.example.rayanne.myapplication.TesteVocacional;
 
-import android.app.MediaRouteButton;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,10 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rayanne.myapplication.Menu.PagMenu;
 import com.example.rayanne.myapplication.Menu.PaginaAgro;
-import com.example.rayanne.myapplication.Menu.Teste_Vocacional;
 import com.example.rayanne.myapplication.R;
+
+import static android.content.Intent.getIntent;
 
 public class PagDescricao extends AppCompatActivity {
 

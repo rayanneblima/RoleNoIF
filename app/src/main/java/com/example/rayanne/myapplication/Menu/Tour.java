@@ -50,7 +50,7 @@ public class Tour extends AppCompatActivity {
         mWebView.loadData(html,"text/html", "UTF-8");
 
 
-    }*/
+    }
 
     @Override
     // Detectar cuando se presiona el botón de retroceso
@@ -60,7 +60,7 @@ public class Tour extends AppCompatActivity {
         } else {
             super.onBackPressed();
         }
-    }
+    }*/
 
     private void exibirVideo(){
         WebView mWebView1 = findViewById(R.id.webview1);
