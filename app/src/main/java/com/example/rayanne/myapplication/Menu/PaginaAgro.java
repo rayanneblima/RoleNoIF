@@ -1,9 +1,12 @@
 package com.example.rayanne.myapplication.Menu;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.transition.Slide;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -16,7 +19,10 @@ import com.example.rayanne.myapplication.ConteudoAgro.ConverseAgro;
 import com.example.rayanne.myapplication.ConteudoAgro.DepoimentosAgro;
 import com.example.rayanne.myapplication.ConteudoAgro.MateriasAgro;
 import com.example.rayanne.myapplication.ConteudoAgro.SeisCoisasAgro;
+import com.example.rayanne.myapplication.Others.OnSwipeTouchListener;
 import com.example.rayanne.myapplication.R;
+
+import java.text.Normalizer;
 
 public class PaginaAgro extends AppCompatActivity {
 
@@ -109,18 +115,19 @@ public class PaginaAgro extends AppCompatActivity {
         });
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     public void MyCustomAlertDialog(){
         final Dialog MyDialog = new Dialog(this);
         MyDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         MyDialog.setContentView(R.layout.activity_rotinagro);
 
-        Button back = MyDialog.findViewById(R.id.back);
-        Button next = MyDialog.findViewById(R.id.next);
+        //Button back = MyDialog.findViewById(R.id.back);
+        //Button next = MyDialog.findViewById(R.id.next);
         Button close = MyDialog.findViewById(R.id.close);
 
         final ImageView foto = MyDialog.findViewById(R.id.foto);
         final TextView descricao = MyDialog.findViewById(R.id.descricao);
-
+        final View viewGroup = MyDialog.findViewById(R.id.viewGroup);
         final int[] img = {R.drawable.img1, R.drawable.img2, R.drawable.img3, R.drawable.img4, R.drawable.img5,
                 R.drawable.img6, R.drawable.img7, R.drawable.img8, R.drawable.img9};
 
@@ -135,8 +142,28 @@ public class PaginaAgro extends AppCompatActivity {
         foto.setImageResource(img[posicao[0]]);
         descricao.setText(desc[posicao[0]]);
 
+        // Na view da foto, ativa "SwipeTouchListener" permitindo detecção do deslize.
+        viewGroup.setOnTouchListener(new OnSwipeTouchListener(PaginaAgro.this) {
+            @Override
+            public void onSwipeLeft() {
+                // Se desliza da direta pra esquerda
+                posicao[0]++;
+                if(posicao[0] > 8) posicao[0] = 0;
+                Log.d("Test", "" + posicao[0]);
+                foto.setImageResource(img[posicao[0]]);
+                descricao.setText(desc[posicao[0]]);
+            }
+            public void onSwipeRight() {
+                // Se desliza da esquerda pra direita
+                posicao[0]--;
+                if(posicao[0] < 0) posicao[0] = 8;
+                Log.d("Test", "" + posicao[0]);
+                foto.setImageResource(img[posicao[0]]);
+                descricao.setText(desc[posicao[0]]);
+            }
+        });
 
-        next.setOnClickListener(new View.OnClickListener() {
+        /*next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 posicao[0]++;
@@ -157,13 +184,13 @@ public class PaginaAgro extends AppCompatActivity {
                 descricao.setText(desc[posicao[0]]);
             }
         });
-
-        close.setOnClickListener(new View.OnClickListener() {
+        
+        /*close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 MyDialog.cancel();
             }
-        });
+        });*/
 
         MyDialog.show();
     }
