@@ -3,7 +3,9 @@
     android:orientation="vertical"
     android:layout_width="300dp"
     android:background="@drawable/background"
-    android:layout_height="400dp">
+    android:layout_height="400dp"
+    android:id="@+id/viewGroup">
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -13,26 +15,9 @@
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_gravity="center|left"
-            android:text="Back"
-            android:layout_margin="5dp"
-            android:textStyle="bold"
-            android:id="@+id/back"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:text="Next"
-            android:layout_margin="5dp"
-            android:textStyle="bold"
-            android:id="@+id/next"
-            android:layout_height="wrap_content" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_gravity="center|right"
-            android:text="Close"
+            android:layout_gravity="center|end"
+            android:background = "@drawable/roundedbutton"
+            android:text="close"
             android:layout_margin="5dp"
             android:textStyle="bold"
             android:id="@+id/close"
