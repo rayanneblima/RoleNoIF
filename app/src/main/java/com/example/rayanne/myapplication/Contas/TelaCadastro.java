@@ -23,7 +23,6 @@ public class TelaCadastro extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tela_cadastro);
-        getSupportActionBar().hide();
         efetuarCadastro();
         entrarConta();
     }
@@ -35,6 +34,8 @@ public class TelaCadastro extends AppCompatActivity {
         ButtonCadastro.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+
+                // TODO take the form data and send to an .php page with the sql query...
 
                 Intent intent = new Intent();
                 intent.setClass(TelaCadastro.this, PagMenu.class);

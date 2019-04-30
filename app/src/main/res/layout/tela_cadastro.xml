@@ -9,23 +9,13 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/msg2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Cadastre-se:"
-            android:textColor="@android:color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent">
 
         <EditText
             android:id="@+id/edtName"
@@ -47,6 +37,17 @@
             android:background="@color/primary"
             android:hint="E-mail"
             android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+
+        <EditText
+            android:id="@+id/edtMatricula"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/primary"
+            android:hint="Matricula"
             android:padding="12dp"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white" />
@@ -83,6 +84,18 @@
             android:layout_marginTop="8dp"
             android:background="@color/primary"
             android:hint="Senha"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white" />
+
+        <EditText
+            android:id="@+id/edtConSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/primary"
+            android:hint="Confirmar Senha"
             android:inputType="textPassword"
             android:padding="12dp"
             android:textColor="@android:color/white"
