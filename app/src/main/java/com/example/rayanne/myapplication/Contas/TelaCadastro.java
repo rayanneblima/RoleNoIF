@@ -1,5 +1,7 @@
 package com.example.rayanne.myapplication.Contas;
 
+import android.app.DownloadManager;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.rayanne.myapplication.Menu.PagMenu;
@@ -29,23 +32,52 @@ public class TelaCadastro extends AppCompatActivity {
 
     public void efetuarCadastro(){
         //botão cadastrar
-        Button ButtonCadastro = (Button) findViewById(R.id.buttonCadastro);
+        Button ButtonCadastro = findViewById(R.id.buttonCadastro);
 
         ButtonCadastro.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
 
-                // TODO take the form data and send to an .php page with the sql query...
+                EditText edtName = findViewById(R.id.edtName);
+                EditText edtEmail = findViewById(R.id.edtEmail);
+                EditText edtMatricula = findViewById(R.id.edtMatricula);
+                EditText edtTelefone = findViewById(R.id.edtTelefone);
+                EditText edtCidade = findViewById(R.id.edtCidade);
+                EditText edtSenha = findViewById(R.id.edtSenha);
 
-                Intent intent = new Intent();
-                intent.setClass(TelaCadastro.this, PagMenu.class);
-                startActivity(intent);
-                finish();
-                Toast.makeText(getApplicationContext(), R.string.suc_cadastro, Toast.LENGTH_SHORT).show();
-                Toast.makeText(getApplicationContext(), R.string.bem_vindo, Toast.LENGTH_SHORT).show();
+                if (edtName.getText().toString().trim().equals("") || edtEmail.getText().toString().trim().equals("") || edtMatricula.getText().toString().trim().equals("")
+                        || edtTelefone.getText().toString().trim().equals("") || edtCidade.getText().toString().trim().equals("") || edtSenha.getText().toString().trim().equals("")) {
 
+                    Toast.makeText(getApplicationContext(), R.string.branco_cadastro, Toast.LENGTH_SHORT).show();
+
+                    } else {
+                    cadastrarUsuario();
+                    }
             }
         });
+    }
+
+    private void cadastrarUsuario() {
+        // TODO take the form data and send to an .php page with the sql query...
+
+        ProgressDialog progre = new ProgressDialog(TelaCadastro.this);
+
+        //Configura o título da progress dialog
+        //progressDialog.setTitle("Titulo da barra");
+
+        //configura a mensagem de que está sendo feito o carregamento
+        progre.setMessage("Cadastrando...por favor aguarde.");
+
+        String url = "https://rolenoifapp.epizy.com";
+
+
+        Intent intent = new Intent();
+        intent.setClass(TelaCadastro.this, PagMenu.class);
+        startActivity(intent);
+        finish();
+        Toast.makeText(getApplicationContext(), R.string.suc_cadastro, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getApplicationContext(), R.string.bem_vindo, Toast.LENGTH_SHORT).show();
+
     }
 
     public void entrarConta(){

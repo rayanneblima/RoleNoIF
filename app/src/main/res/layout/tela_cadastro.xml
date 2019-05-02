@@ -23,11 +23,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/primary"
-            android:hint="Nome de exibição"
+            android:hint="Nome"
             android:inputType="text"
             android:padding="12dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"/>
 
         <EditText
             android:id="@+id/edtEmail"
@@ -38,8 +38,8 @@
             android:hint="E-mail"
             android:inputType="textEmailAddress"
             android:padding="12dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"/>
 
         <EditText
             android:id="@+id/edtMatricula"
@@ -47,10 +47,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/primary"
-            android:hint="Matricula"
+            android:hint="Matrícula"
             android:padding="12dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white" />
 
         <EditText
             android:id="@+id/edtTelefone"
@@ -61,8 +61,8 @@
             android:hint="Telefone"
             android:inputType="phone"
             android:padding="12dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white" />
 
 
         <EditText
@@ -73,37 +73,34 @@
             android:background="@color/primary"
             android:hint="Cidade"
             android:padding="12dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white" />
 
-
-        <EditText
-            android:id="@+id/edtSenha"
+        <!--biblioteca que permite o "olhinho" na senha-->
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/primary"
-            android:hint="Senha"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            app:passwordToggleEnabled="true"
+            app:passwordToggleDrawable="@drawable/icon_visibility"
+            app:hintEnabled="false"
+            android:layout_marginTop="8dp" >
 
-        <EditText
-            android:id="@+id/edtConSenha"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/primary"
-            android:hint="Confirmar Senha"
-            android:inputType="textPassword"
-            android:padding="12dp"
-            android:textColor="@android:color/white"
-            android:textColorHint="@android:color/white" />
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/edtSenha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/primary"
+                android:hint="Senha"
+                android:inputType="textPassword"
+                android:padding="12dp"
+                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/white" />
+
+        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:id="@+id/buttonCadastro"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="16dp"

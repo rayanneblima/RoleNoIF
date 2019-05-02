@@ -16,5 +16,6 @@
     <string name="txt_Titulo">Qual Curso Técnico Integrado mais combina com você?</string>
     <string name="txt_Resumo">Dúvida sobre qual curso escolher? Faça o teste e descubra qual sugestão temos pra você.</string>
     <string name="btn_Iniciar">INICIAR</string>
+    <string name="branco_cadastro">Preencha todos os campos!</string>
 
 </resources>
