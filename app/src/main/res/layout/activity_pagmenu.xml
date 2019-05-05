@@ -8,6 +8,7 @@
     tools:context=".Menu.PagMenu"
     tools:layout_editor_absoluteY="81dp">
 
+    <!--TODO: corrigir a ordem dos botoes e generalizar os cursos-->
     <Button
         android:id="@+id/btn_TV"
         android:layout_width="0dp"

@@ -7,6 +7,7 @@
     android:background="@drawable/background"
     tools:layout_editor_absoluteY="81dp">
 
+    <!--TODO: LIMITAR CARACTERES, MATRICULA É SÓ NUMERO-->
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_height="wrap_content"

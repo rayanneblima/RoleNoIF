@@ -1,10 +1,13 @@
 package com.example.rayanne.myapplication.Menu;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.rayanne.myapplication.R;
 
@@ -69,6 +72,33 @@ public class PagMenu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void onBackPressed(){
+        popup_Cancel();
+    }
+
+    public void popup_Cancel() {
+        //Cria o gerador do AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        //define a mensagem
+        builder.setMessage("Deseja fechar o aplicativo?");
+        //define um botão como positivo
+        builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                finish();
+            }
+        });
+        //define um botão como negativo.
+        builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+            }
+        });
+        //cria o AlertDialog
+        //atributo da classe.
+        AlertDialog alerta = builder.create();
+        //Exibe
+        alerta.show();
     }
 
 }

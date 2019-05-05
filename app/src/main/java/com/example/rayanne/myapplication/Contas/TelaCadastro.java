@@ -1,13 +1,10 @@
 package com.example.rayanne.myapplication.Contas;
 
-import android.app.DownloadManager;
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,11 +19,12 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.rayanne.myapplication.Menu.PagMenu;
 import com.example.rayanne.myapplication.R;
-import com.example.rayanne.myapplication.TesteVocacional.Jogo_TV;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -39,8 +37,8 @@ public class TelaCadastro extends AppCompatActivity {
     private EditText edtName, edtEmail, edtMatricula, edtTelefone, edtCidade, edtSenha;
     private Button ButtonCadastro;
 
-    //TODO Trocar essa variavel com informações do servidor e configurar os arquivos .php com o login dos bancos de dados do servidor do app
-    private static String URL_REGIST = "http://127.0.0.1/roleIf/confirmCadastro.php";
+    private static String URL_REGIST = "http://192.168.2.4/teste/confirmCadastro.php";
+    //private static String URL_REGIST = "http://rolenoifapp.epizy.com/confirmCadastro.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,42 +64,49 @@ public class TelaCadastro extends AppCompatActivity {
         ButtonCadastro.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                if (edtName.getText().toString().trim().equals("") || edtEmail.getText().toString().trim().equals("") || edtMatricula.getText().toString().trim().equals("") || edtTelefone.getText().toString().trim().equals("") || edtCidade.getText().toString().trim().equals("") || edtSenha.getText().toString().trim().equals("")) {
-                    Toast.makeText(getApplicationContext(), R.string.branco_cadastro, Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(getApplicationContext(), "Deveria ter cadastrado", Toast.LENGTH_SHORT).show();
-                    String nome = edtName.getText().toString().trim();
-                    String email = edtEmail.getText().toString().trim();
-                    String matricula = edtMatricula.getText().toString().trim();
-                    String telefone = edtTelefone.getText().toString().trim();
-                    String cidade = edtCidade.getText().toString().trim();
-                    String senha = edtSenha.getText().toString().trim();
 
-                    cadastrarUsuario(nome, email, matricula, telefone, cidade, senha);
+                String nomeUser = edtName.getText().toString().trim();
+                String emailUser = edtEmail.getText().toString().trim();
+                String matriculaUser = edtMatricula.getText().toString().trim();
+                String telefoneUser = edtTelefone.getText().toString().trim();
+                String cidadeUser = edtCidade.getText().toString().trim();
+                String senhaUser = edtSenha.getText().toString().trim();
+
+                if (!(nomeUser.equals("") || emailUser.equals("") || matriculaUser.equals("") || telefoneUser.equals("") ||cidadeUser.equals("") || senhaUser.equals(""))) {
+                    cadastrarUsuario(nomeUser, emailUser, matriculaUser, telefoneUser, cidadeUser, senhaUser);
+                } else {
+                    Toast.makeText(getApplicationContext(), R.string.branco_cadastro, Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 
-    private void cadastrarUsuario(final String nome, final String email, final String matricula, final String telefone,  final String cidade, final String senha) {
+    private void cadastrarUsuario(final String nomeUser, final String emailUser, final String matriculaUser, final String telefoneUser, final String cidadeUser, final String senhaUser) {
 
         // Desativa o botão de cadastro (evitar vários cadastros)
         ButtonCadastro.setVisibility(View.GONE);
 
-        // StringRequest() começa aq
+        // StringRequest() começa aqui
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
                 new Response.Listener<String>() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse( String response) {
+                        //Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
                         try{
                             JSONObject jsonObject = new JSONObject(response);
-                            String success = jsonObject.getString("success");
-                            if(success.equals("0")){
-                                Toast.makeText(getApplicationContext(), R.string.suc_cadastro, Toast.LENGTH_SHORT).show();
+                            String code = jsonObject.getString("code");
+                            if (code.equals("sucess")){
+                                Toast.makeText(getApplicationContext(), "Seja Bem-Vindo, " + nomeUser + "!",
+                                        Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent();
+                                intent.setClass(TelaCadastro.this, PagMenu.class);
+                                startActivity(intent);
+                                finish();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
-                            Toast.makeText(getApplicationContext(), "Erro no cadastro!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Erro ao cadastrar!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "ERROR: " + e.getMessage(), Toast.LENGTH_LONG).show();
                             ButtonCadastro.setVisibility(View.VISIBLE);
                         }
                     }
@@ -110,60 +115,41 @@ public class TelaCadastro extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Toast.makeText(getApplicationContext(), "Erro no cadastro!", Toast.LENGTH_SHORT).show();
+                        error.printStackTrace();
                         ButtonCadastro.setVisibility(View.VISIBLE);
                     }
                 }
-                ){
+        ){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                // Cria um mapa p/ Criptografia utilizando o nome o email e a senha q a pessoa passou para cadastrar.
+                // Cria um mapa p/ Criptografia
                 Map<String, String> params = new HashMap<>();
-                params.put("nome", nome);
-                params.put("email", email);
-                params.put("senha", senha);
-                return super.getParams();
+                params.put("nomeUser", nomeUser);
+                params.put("emailUser", emailUser);
+                params.put("matriculaUser", matriculaUser);
+                params.put("telefoneUser", telefoneUser);
+                params.put("cidadeUser", cidadeUser);
+                params.put("senhaUser", senhaUser);
+                return params;
             }
-        };
-        // StringRequest() acaba aq --------------------------------------------------------------------------
 
+        };
+        // StringRequest() acaba aqui --------------------------------------------------------------------------
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-
-        /*
-        ** TAVA ANTES DOS TESTES COM O CONTEUDO DO VOLLEY **
-
-        ProgressDialog progre = new ProgressDialog(TelaCadastro.this);
-        //Configura o título da progress dialog
-        //progressDialog.setTitle("Titulo da barra");
-        //configura a mensagem de que está sendo feito o carregamento
-        progre.setMessage("Cadastrando...por favor aguarde.");
-        String url = "https://rolenoifapp.epizy.com";
-
-        Intent intent = new Intent();
-        intent.setClass(TelaCadastro.this, PagMenu.class);
-        startActivity(intent);
-        finish();
-        Toast.makeText(getApplicationContext(), R.string.suc_cadastro, Toast.LENGTH_SHORT).show();
-        //Toast.makeText(getApplicationContext(), R.string.bem_vindo, Toast.LENGTH_SHORT).show();
-        */
     }
 
     public void entrarConta(){
         //botão entrar
-        Button btnEntrar = (Button) findViewById(R.id.btnEntrar);
+        Button btnEntrar = findViewById(R.id.btnEntrar);
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-
-                Intent intent = new Intent();
-                intent.setClass(TelaCadastro.this, TelaLogin.class);
-                startActivity(intent);
-
+                popup_Cancel();
             }
         });
     }
-
 
     public void onBackPressed(){
         popup_Cancel();
