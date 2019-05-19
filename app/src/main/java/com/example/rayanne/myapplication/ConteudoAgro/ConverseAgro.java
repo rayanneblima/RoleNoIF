@@ -10,6 +10,8 @@ import android.widget.Button;
 import com.example.rayanne.myapplication.R;
 
 public class ConverseAgro extends AppCompatActivity {
+    // TODO: intent do wpp abrindo diretamente na conversa do numero (verificar se ja tem o contato adicionado)
+    // TODO: conferir o private (segurança) dos campos
 
     String txtCel1 = "032999344934";
     String txtCel2 = "032991210097";

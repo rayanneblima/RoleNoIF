@@ -15,6 +15,7 @@ import com.example.rayanne.myapplication.R;
 import static android.content.Intent.getIntent;
 
 public class PagDescricao extends AppCompatActivity {
+    //TODO: conferir o private (segurança) dos campos
 
     private DescricaoCursos DescricaoCursos = new DescricaoCursos();
 
@@ -74,37 +75,37 @@ public class PagDescricao extends AppCompatActivity {
         String nomeCurso = intent.getStringExtra("Curso");
         Toast.makeText(PagDescricao.this, "Info: " + nomeCurso, Toast.LENGTH_SHORT).show();
 
-        if (nomeCurso.equals(DescricaoCursos.getnomeCursos(0))){
+        if (nomeCurso.equals(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(0))){
             paraAgro();
         }
 
-        else if (nomeCurso.equals(DescricaoCursos.getnomeCursos(1))){
-            txtCurso.setText(DescricaoCursos.getnomeCursos(1));
-            txtDesc.setText(DescricaoCursos.getdescricaoCursos(1));
+        else if (nomeCurso.equals(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(1))){
+            txtCurso.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(1));
+            txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(1));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.tal);
 
         }
 
-        else if (nomeCurso.equals(DescricaoCursos.getnomeCursos(2))){
-            txtCurso.setText(DescricaoCursos.getnomeCursos(2));
-            txtDesc.setText(DescricaoCursos.getdescricaoCursos(2));
+        else if (nomeCurso.equals(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(2))){
+            txtCurso.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(2));
+            txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(2));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.ti);
 
         }
 
-        else if (nomeCurso.equals(DescricaoCursos.getnomeCursos(3))){
-            txtCurso.setText(DescricaoCursos.getnomeCursos(3));
-            txtDesc.setText(DescricaoCursos.getdescricaoCursos(3));
+        else if (nomeCurso.equals(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(3))){
+            txtCurso.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(3));
+            txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(3));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.tmb);
 
         }
 
-        else if (nomeCurso.equals(DescricaoCursos.getnomeCursos(4))){
-            txtCurso.setText(DescricaoCursos.getnomeCursos(4));
-            txtDesc.setText(DescricaoCursos.getdescricaoCursos(4));
+        else if (nomeCurso.equals(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(4))){
+            txtCurso.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(4));
+            txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(4));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.tz);
 

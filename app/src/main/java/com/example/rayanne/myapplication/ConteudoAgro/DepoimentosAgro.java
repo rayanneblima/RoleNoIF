@@ -8,6 +8,7 @@ import android.webkit.WebView;
 import com.example.rayanne.myapplication.R;
 
 public class DepoimentosAgro extends AppCompatActivity {
+    // TODO: conferir o private (segurança) dos campos
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

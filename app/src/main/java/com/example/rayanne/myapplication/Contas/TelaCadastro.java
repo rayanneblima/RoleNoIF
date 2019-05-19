@@ -33,12 +33,18 @@ import java.util.Map;
  */
 
 public class TelaCadastro extends AppCompatActivity {
+    //TODO: dar a opçao de cadastro com o fb, pegando os dados e facilitando o cadastro.
+    //TODO: verificar se a matricula corresponde a um aluno do IF
+    //TODO: verificar se email e telefone ja foram cadastrados (PHP)
+    //TODO: melhorar os toast de mensagem
+    //TODO: conferir o private (segurança) dos campos
 
     private EditText edtName, edtEmail, edtMatricula, edtTelefone, edtCidade, edtSenha;
     private Button ButtonCadastro;
 
-    private static String URL_REGIST = "http://192.168.2.4/teste/confirmCadastro.php";
+    //private static String URL_REGIST = "http://192.168.2.4/teste/confirmCadastro.php";
     //private static String URL_REGIST = "http://rolenoifapp.epizy.com/confirmCadastro.php";
+    private static String URL_REGIST = "http://rolenoifapp.000webhostapp.com/confirmCadastro.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +127,7 @@ public class TelaCadastro extends AppCompatActivity {
                 }
         ){
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 // Cria um mapa p/ Criptografia
                 Map<String, String> params = new HashMap<>();
                 params.put("nomeUser", nomeUser);

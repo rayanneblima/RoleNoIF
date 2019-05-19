@@ -11,6 +11,8 @@ import com.example.rayanne.myapplication.Menu.PagMenu;
 import com.example.rayanne.myapplication.R;
 
 public class Resultado extends AppCompatActivity {
+    //TODO: conferir o private (segurança) dos campos
+    //TODO usar o conteudo de agro como unico, mudando de acordo com o curso escolhido
 
     //REDUZIR CODIGO
 

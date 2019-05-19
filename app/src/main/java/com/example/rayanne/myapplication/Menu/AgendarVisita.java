@@ -11,6 +11,7 @@ import android.webkit.WebViewClient;
 import com.example.rayanne.myapplication.R;
 
 public class AgendarVisita extends AppCompatActivity {
+    //TODO: definir pra onde serao enviadas as respostas do formulario
 
     private WebView mWebView;
 
@@ -41,15 +42,10 @@ public class AgendarVisita extends AppCompatActivity {
     }
 
     @Override
-    // Detectar cuando se presiona el botón de retroceso
     public void onBackPressed() {
-        if(mWebView.canGoBack()) {
-            mWebView.goBack();
-        } else {
-            super.onBackPressed();
-        }
+        if(mWebView.canGoBack()) mWebView.goBack();
+        else super.onBackPressed();
     }
-
 
 }
 

@@ -5,13 +5,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
+import com.example.rayanne.myapplication.Contas.TelaPerfil;
 import com.example.rayanne.myapplication.R;
 
 public class PagMenu extends AppCompatActivity {
+    //TODO: conferir o private (segurança) dos campos
+    //TODO: mudar ordem dos botoes dando enfase na Tour
+    //TODO: iniciarAgro da lugar a iniciarCursos (exemplo), com pagina para escolha
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +25,27 @@ public class PagMenu extends AppCompatActivity {
         iniciarAgro();
         iniciarTour();
         agendarVisita();
+    }
+
+    //Menu de "3 pontinhos"
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.user_profile){
+            Intent intent = new Intent(PagMenu.this, TelaPerfil.class);
+            startActivity(intent);
+        }
+        else{
+            //TODO: DESLOGAR USUARIO
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void iniciarTeste(){

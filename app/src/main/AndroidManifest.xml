@@ -27,7 +27,11 @@
         </activity>
 
         <activity android:name=".Contas.TelaCadastro"
-            android:label="Cadastro:">
+            android:label="Cadastro">
+        </activity>
+
+        <activity android:name=".Contas.TelaPerfil"
+            android:label="Perfil">
         </activity>
 
         <activity android:name=".Menu.PagMenu">

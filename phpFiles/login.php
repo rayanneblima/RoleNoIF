@@ -3,7 +3,9 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         $emailUser = $_POST['emailUser'];
-        $senhaUser = $_POST['senhaUser'];
+		$senhaUser = $_POST['senhaUser'];
+		
+		//TODO: senhaUser do POST deve ser encriptografada e comparada com a senhaUser do BD
 		
 		if ($_POST['emailUser'] && $_POST['senhaUser']){
 			$resultado = mysqli_query($conexao, "SELECT * FROM tblusers");

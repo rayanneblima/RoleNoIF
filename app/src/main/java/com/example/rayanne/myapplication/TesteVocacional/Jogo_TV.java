@@ -14,6 +14,8 @@ import com.example.rayanne.myapplication.R;
 
 
 public class Jogo_TV extends AppCompatActivity {
+    //TODO: conferir o private (segurança) dos campos
+    //TODO: verifcar se placares sao iguais -- erro
 
     private Questoes_TV Questoes_TV = new Questoes_TV();
 
@@ -287,13 +289,9 @@ public class Jogo_TV extends AppCompatActivity {
             }
             idPerg++;
             qntPerg--;
-        } else{ //acabaram as questões
+        } else{
+            //acabaram as questões
             //Passando variável para outra tela
-            /*Toast.makeText(Jogo_TV.this, "Info: " + Info, Toast.LENGTH_SHORT).show();
-            Toast.makeText(Jogo_TV.this, "Zoo: " + Zoo, Toast.LENGTH_SHORT).show();
-            Toast.makeText(Jogo_TV.this, "Meib: " + MeiB, Toast.LENGTH_SHORT).show();
-            Toast.makeText(Jogo_TV.this, "Alim: " + Alim, Toast.LENGTH_SHORT).show();
-            Toast.makeText(Jogo_TV.this, "Agro: " + Agro, Toast.LENGTH_SHORT).show();*/
             String curso1 = Curso1();
             String curso2 = Curso2();
             Intent intent = new Intent(this, Resultado.class);

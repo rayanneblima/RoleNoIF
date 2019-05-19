@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -17,6 +16,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.rayanne.myapplication.Menu.PagMenu;
 import com.example.rayanne.myapplication.R;
+import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.login.LoginManager;
 import com.facebook.FacebookCallback;
@@ -24,7 +24,6 @@ import com.facebook.FacebookException;
 import com.facebook.Profile;
 import com.facebook.ProfileTracker;
 import com.facebook.login.LoginResult;
-import com.facebook.login.widget.LoginButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,14 +32,17 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class TelaLogin extends AppCompatActivity {
+    //TODO: se for o primeiro login com o fb, deve ser pedido pra completar as informações do perfil. E-mail tbm devera ser vinculado.
+    //TODO: melhorar os toast de mensagem
+    //TODO: conferir o private (segurança) dos campos
 
     private EditText edtEmail, edtSenha;
     private Button entrarButton;
 
-    private static String URL_LOGIN = "http://192.168.2.4/teste/login.php";
-    //private static String URL_REGIST = "http://rolenoifapp.epizy.com/login.php";
+    //private static String URL_LOGIN = "http://192.168.2.4/teste/login.php";
+   // private static String URL_LOGIN = "http://rolenoifapp.epizy.com/login.php";
+    private static String URL_LOGIN = "http://rolenoifapp.000webhostapp.com/login.php"; //site no ar
     private CallbackManager callbackManager = CallbackManager.Factory.create();
 
     @Override
@@ -66,9 +68,7 @@ public class TelaLogin extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 LoginManager.getInstance().logInWithReadPermissions(TelaLogin.this,Arrays.asList("public_profile","email"));
-
             }
         });
 
@@ -76,12 +76,11 @@ public class TelaLogin extends AppCompatActivity {
             @Override
             public void onSuccess(LoginResult loginResult) {
                 goMainScreen();
-
-                //ARRUMAR O IF/ELSE
+                //TODO: ARRUMAR O IF/ELSE
                 if (Profile.getCurrentProfile() != null) {
-                    /*Profile profile = Profile.getCurrentProfile();
+                    Profile profile = Profile.getCurrentProfile();
                     String firstName = profile.getName();
-                    Toast.makeText(getApplicationContext(), "Bem-vindo(a), " + firstName + "!", Toast.LENGTH_LONG).show();*/
+                    Toast.makeText(getApplicationContext(), "Bem-vindo(a), " + firstName + "!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent();
                     intent.setClass(TelaLogin.this, PagMenu.class);
                     startActivity(intent);
@@ -116,6 +115,7 @@ public class TelaLogin extends AppCompatActivity {
         Intent intent = new Intent(this, PagMenu.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+        finish();
     }
 
     @Override
@@ -176,7 +176,7 @@ public class TelaLogin extends AppCompatActivity {
                 }
         ){
             @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
+            protected Map<String, String> getParams() {
                 // Cria um mapa p/ Criptografia
                 Map<String, String> params = new HashMap<>();
                 params.put("emailUser", emailUser);

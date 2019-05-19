@@ -25,6 +25,8 @@ import com.example.rayanne.myapplication.R;
 import java.text.Normalizer;
 
 public class PaginaAgro extends AppCompatActivity {
+    //TODO: conferir o private (segurança) dos campos
+    //TODO: usar todo o conteúdo de agro como pagina unica pros demais cursos, só passando o nome do curso e modificando onde necessario
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +98,7 @@ public class PaginaAgro extends AppCompatActivity {
         btnRotina.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Popup customizado
+                //Popup customizado na mesma pagina
                 MyCustomAlertDialog();
             }
         });
@@ -114,6 +116,8 @@ public class PaginaAgro extends AppCompatActivity {
             }
         });
     }
+
+    //TODO: este codigo deve ser feito separado para ser possivel incrementar com k numeros de fotos
 
     @SuppressLint("ClickableViewAccessibility")
     public void MyCustomAlertDialog(){

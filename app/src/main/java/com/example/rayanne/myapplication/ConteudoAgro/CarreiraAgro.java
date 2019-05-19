@@ -9,6 +9,7 @@ import android.widget.LinearLayout;
 import com.example.rayanne.myapplication.R;
 
 public class CarreiraAgro extends AppCompatActivity {
+    // TODO: conferir o private (segurança) dos campos
 
     private LinearLayout lyt_btnPerg1;
     private Button btn_Perg1;
@@ -31,12 +32,12 @@ public class CarreiraAgro extends AppCompatActivity {
     }
 
     private void mostraConteudo() {
-        btn_Perg1 = (Button) findViewById(R.id.btn_Perg1);
+        btn_Perg1 = findViewById(R.id.btn_Perg1);
 
         btn_Perg1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                lyt_btnPerg1 = (LinearLayout) findViewById(R.id.lyt_btnPerg1);
+                lyt_btnPerg1 = findViewById(R.id.lyt_btnPerg1);
                 if(show1){
                     lyt_btnPerg1.setVisibility(View.GONE);
                     show1 = false;
@@ -47,12 +48,12 @@ public class CarreiraAgro extends AppCompatActivity {
             }
         });
 
-        btn_Perg2 = (Button) findViewById(R.id.btn_Perg2);
+        btn_Perg2 = findViewById(R.id.btn_Perg2);
 
         btn_Perg2.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                lyt_btnPerg2 = (LinearLayout) findViewById(R.id.lyt_btnPerg2);
+                lyt_btnPerg2 = findViewById(R.id.lyt_btnPerg2);
                 if(show2){
                     lyt_btnPerg2.setVisibility(View.GONE);
                     show2 = false;
@@ -63,12 +64,12 @@ public class CarreiraAgro extends AppCompatActivity {
             }
         });
 
-        btn_Perg3 = (Button) findViewById(R.id.btn_Perg3);
+        btn_Perg3 = findViewById(R.id.btn_Perg3);
 
         btn_Perg3.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                lyt_btnPerg3 = (LinearLayout) findViewById(R.id.lyt_btnPerg3);
+                lyt_btnPerg3 = findViewById(R.id.lyt_btnPerg3);
                 if(show3){
                     lyt_btnPerg3.setVisibility(View.GONE);
                     show3 = false;
@@ -79,12 +80,12 @@ public class CarreiraAgro extends AppCompatActivity {
             }
         });
 
-        btn_Perg4 = (Button) findViewById(R.id.btn_Perg4);
+        btn_Perg4 = findViewById(R.id.btn_Perg4);
 
         btn_Perg4.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                lyt_btnPerg4 = (LinearLayout) findViewById(R.id.lyt_btnPerg4);
+                lyt_btnPerg4 = findViewById(R.id.lyt_btnPerg4);
                 if(show4){
                     lyt_btnPerg4.setVisibility(View.GONE);
                     show4 = false;

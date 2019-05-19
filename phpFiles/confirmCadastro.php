@@ -11,8 +11,8 @@
 		//arrumar um jeito de desincriptografar pra comparar no login:
 		//$senhaUser = password_hash($senhaUser, PASSWORD_DEFAULT);
 		
-		//TODO VERIFICAR SE JA TEM MESMO EMAIL CADASTRADO
-        $sql = "INSERT INTO tblusers(nomeUser, emailUser, matriculaUser, telefoneUser, cidadeUser, senhaUser)
+		//TODO: VERIFICAR SE JA TEM MESMO EMAIL/CELULAR CADASTRADO
+        $sql = "INSERT INTO 'tblusers'('nomeUser', 'emailUser', 'matriculaUser', 'telefoneUser', 'cidadeUser', 'senhaUser')
 		VALUES ('".$nomeUser."', '".$emailUser."', '".$matriculaUser."', '".$telefoneUser."', '".$cidadeUser."', '".$senhaUser."')";
         if(mysqli_query($conexao, $sql)){
             $result["code"] = "sucess";

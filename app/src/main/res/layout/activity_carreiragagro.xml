@@ -154,7 +154,7 @@
                     android:text="Segundo pesquisa salarial do site de empregos Catho em 2018, um técnico em agropecuária tem ganho médio nacional inicial de R$ 1.992,43.\nJá concursos públicos para profissionais de nível técnico, como por exemplo, Agente de
                     Atividades Agropecuárias e Agente de Inspeção Sanitária e Industrial de Produtos de Origem Animal (AISIPOA), oferecem salários iniciais de R$ 6.600,00, segundo o Ministério da Agricultura, Pecuária e Abastecimento em pesquisa de 2018.\n"
                     android:textAppearance="@style/TextAppearance.AppCompat"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textAlignment="center"
                     android:visibility="visible" />
             </LinearLayout>

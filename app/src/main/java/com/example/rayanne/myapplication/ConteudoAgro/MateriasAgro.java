@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import com.example.rayanne.myapplication.R;
 
 public class MateriasAgro extends AppCompatActivity {
+    // TODO: conferir o private (segurança) dos campos
 
     private LinearLayout lyt_btnPerg1;
     private LinearLayout lyt_btnPerg2;

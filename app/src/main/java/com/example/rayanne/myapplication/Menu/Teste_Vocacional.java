@@ -11,6 +11,7 @@ import com.example.rayanne.myapplication.TesteVocacional.Jogo_TV;
 import com.example.rayanne.myapplication.R;
 
 public class Teste_Vocacional extends AppCompatActivity {
+    //TODO: conferir o private (segurança) dos campos
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

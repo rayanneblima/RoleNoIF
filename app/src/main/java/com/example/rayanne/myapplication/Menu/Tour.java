@@ -8,8 +8,10 @@ import android.webkit.WebView;
 import com.example.rayanne.myapplication.R;
 
 public class Tour extends AppCompatActivity {
+    //TODO: conferir o private (segurança) dos campos
+    //TODO: incrementar com todas as imagens e videos possiveis (galeria chamando um poupop de exibiçao)
 
-    private WebView mWebView;
+    private WebView mWebView1;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
