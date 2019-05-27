@@ -10,8 +10,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.rayanne.myapplication.Contas.TelaLogin;
 import com.example.rayanne.myapplication.Contas.TelaPerfil;
 import com.example.rayanne.myapplication.R;
+import com.facebook.AccessToken;
 
 public class PagMenu extends AppCompatActivity {
     //TODO: conferir o private (segurança) dos campos
@@ -38,11 +40,12 @@ public class PagMenu extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.user_profile){
-            Intent intent = new Intent(PagMenu.this, TelaPerfil.class);
+            //TODO: obter o perfil do usuario
+            Intent intent = new Intent(this, TelaPerfil.class);
             startActivity(intent);
         }
         else{
-            //TODO: DESLOGAR USUARIO
+            //TODO: DESLOGAR USUARIO DO FB OU DA CONTA
             finish();
         }
         return super.onOptionsItemSelected(item);

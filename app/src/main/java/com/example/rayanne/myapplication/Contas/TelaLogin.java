@@ -18,6 +18,8 @@ import com.example.rayanne.myapplication.Menu.PagMenu;
 import com.example.rayanne.myapplication.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.login.LoginManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -78,12 +80,11 @@ public class TelaLogin extends AppCompatActivity {
                 goMainScreen();
                 //TODO: ARRUMAR O IF/ELSE
                 if (Profile.getCurrentProfile() != null) {
+                    AccessToken accessToken = loginResult.getAccessToken();
                     Profile profile = Profile.getCurrentProfile();
                     String firstName = profile.getName();
                     Toast.makeText(getApplicationContext(), "Bem-vindo(a), " + firstName + "!", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent();
-                    intent.setClass(TelaLogin.this, PagMenu.class);
-                    startActivity(intent);
+                    get_profile(accessToken);
                 } else {
                     ProfileTracker profileTracker = new ProfileTracker() {
                         @Override
@@ -122,6 +123,44 @@ public class TelaLogin extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public void get_profile(AccessToken accessToken){
+        GraphRequest request = GraphRequest.newMeRequest(
+                accessToken, new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        Intent profileIntent = new Intent(TelaLogin.this, TelaPerfil.class);
+                        try {
+                            String userID = object.getString("id");
+                            profileIntent.putExtra("id", userID);
+                            String firstname = "";
+                            String lastname = "";
+                            String email = "";
+
+                            if (object.has("first_name")) {
+                                firstname = object.getString("first_name");
+                                profileIntent.putExtra("name", firstname);
+                            }
+                            if (object.has("last_name")) {
+                                lastname = object.getString("last_name");
+                                profileIntent.putExtra("lastname", lastname);
+                            }
+                            if (object.has("email")){
+                                email = object.getString("email");
+                                profileIntent.putExtra("email", email);
+                            }
+                            startActivity(profileIntent);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+        Bundle parameters = new Bundle();
+        parameters.putString("fields", "id, first_name, last_name, email");
+        request.setParameters(parameters);
+        request.executeAsync();
+
     }
 
     public void loginbtnEntrar(){
