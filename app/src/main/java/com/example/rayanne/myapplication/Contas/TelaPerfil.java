@@ -29,6 +29,7 @@ import org.json.JSONObject;
 
 public class TelaPerfil extends AppCompatActivity {
     //TODO: conferir o private (segurança) dos campos
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);

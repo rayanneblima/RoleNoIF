@@ -35,7 +35,7 @@ import java.util.Map;
 public class TelaCadastro extends AppCompatActivity {
     //TODO: dar a opçao de cadastro com o fb, pegando os dados e facilitando o cadastro.
     //TODO: verificar se a matricula corresponde a um aluno do IF
-    //TODO: verificar se email e telefone ja foram cadastrados (PHP)
+    //TODO: verificar se telefone ja foi cadastrado (PHP)
     //TODO: melhorar os toast de mensagem
     //TODO: conferir o private (segurança) dos campos
 
@@ -44,7 +44,7 @@ public class TelaCadastro extends AppCompatActivity {
 
     //private static String URL_REGIST = "http://192.168.2.4/teste/confirmCadastro.php";
     //private static String URL_REGIST = "http://rolenoifapp.epizy.com/confirmCadastro.php";
-    private static String URL_REGIST = "http://rolenoifapp.000webhostapp.com/confirmCadastro.php";
+    private static String URL_CADASTRO = "http://rolenoifapp.000webhostapp.com/cadastro.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +93,7 @@ public class TelaCadastro extends AppCompatActivity {
         ButtonCadastro.setVisibility(View.GONE);
 
         // StringRequest() começa aqui
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_CADASTRO,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse( String response) {
@@ -101,7 +101,11 @@ public class TelaCadastro extends AppCompatActivity {
                         try{
                             JSONObject jsonObject = new JSONObject(response);
                             String code = jsonObject.getString("code");
-                            if (code.equals("sucess")){
+                            if (code.equals("cadastrado")){
+                                Toast.makeText(getApplicationContext(), "E-mail já cadastrado! Verifique ou refaça seu cadastro.",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                            else if (code.equals("sucess")){
                                 Toast.makeText(getApplicationContext(), "Seja Bem-Vindo, " + nomeUser + "!",
                                         Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent();
