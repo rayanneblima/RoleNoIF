@@ -1,8 +1,13 @@
 package com.example.rayanne.myapplication.Contas;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,6 +35,8 @@ import com.facebook.login.LoginResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -44,7 +51,7 @@ public class TelaLogin extends AppCompatActivity {
 
     //private static String URL_LOGIN = "http://192.168.2.4/teste/login.php";
    // private static String URL_LOGIN = "http://rolenoifapp.epizy.com/login.php";
-    private static String URL_LOGIN = "http://rolenoifapp.000webhostapp.com/login.php"; //site no ar
+    private static String URL_LOGIN = "https://rolenoifapp.000webhostapp.com/login.php"; //site no ar
     private CallbackManager callbackManager = CallbackManager.Factory.create();
 
     @Override
@@ -57,10 +64,26 @@ public class TelaLogin extends AppCompatActivity {
         edtSenha = findViewById(R.id.edtSenha);
         entrarButton = findViewById(R.id.entrarButton);
 
+        //obterKeyHash();
         loginFB();
         loginbtnEntrar();
         cadastroUsuario();
     }
+
+    /*public void obterKeyHash(){
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.example.rayanne.myapplication", PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("KeyHash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+    }*/
 
     public void loginFB(){
 
@@ -130,7 +153,8 @@ public class TelaLogin extends AppCompatActivity {
                 accessToken, new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
-                        Intent profileIntent = new Intent(TelaLogin.this, TelaPerfil.class);
+                        Intent profileIntent = new Intent(TelaLogin.this, TelaPerfil
+                                .class);
                         try {
                             String userID = object.getString("id");
                             profileIntent.putExtra("id", userID);

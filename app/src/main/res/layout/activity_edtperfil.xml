@@ -18,7 +18,7 @@
             android:layout_height="130sp"
             android:layout_gravity="center"
             android:background="@drawable/com_facebook_auth_dialog_cancel_background"
-            android:backgroundTint="@color/com_facebook_button_background_color_focused" />
+            android:backgroundTint="@color/com_facebook_button_background_color_disabled" />
 
         <EditText
             android:id="@+id/edtName"

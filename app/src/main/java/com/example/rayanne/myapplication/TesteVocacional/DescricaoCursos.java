@@ -1,8 +1,8 @@
 package com.example.rayanne.myapplication.TesteVocacional;
 
-class DescricaoCursos {
+public class DescricaoCursos {
 
-    static String[] nomeCursos = {
+    public static String[] nomeCursos = {
             "Técnico em Agropecuária", "Técnico em Alimentos", "Técnico em Informática", "Técnico em Meio Ambiente", "Técnico em Zootecnia"
     };
 

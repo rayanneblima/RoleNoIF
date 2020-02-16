@@ -8,58 +8,38 @@
     tools:context=".Menu.PagMenu"
     tools:layout_editor_absoluteY="81dp">
 
-    <!--TODO: corrigir a ordem dos botoes e generalizar os cursos-->
-    <Button
-        android:id="@+id/btn_TV"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="99dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="29dp"
-        android:background="@drawable/botao"
-        android:ellipsize="start"
-        android:text="@string/btn_TV"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Agro"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.49"
-        app:layout_constraintVertical_chainStyle="spread_inside" />
+    <!--TODO: Generalizar os cursos-->
+
 
     <Button
-        android:id="@+id/btn_Agro"
+        android:id="@+id/btn_Cursos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="151dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="24dp"
         android:background="@drawable/botao"
-        android:text="@string/btn_Agro"
+        android:text="@string/btn_Cursos"
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Tour"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_TV" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_Tour"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
+        android:layout_marginTop="34dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="27dp"
         android:background="@drawable/botao"
         android:text="@string/btn_Tour"
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_Visita"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Agro" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_Cursos" />
 
     <Button
         android:id="@+id/btn_Visita"
@@ -67,15 +47,46 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="48dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="110dp"
+        android:layout_marginBottom="119dp"
         android:background="@drawable/botao"
         android:text="@string/btn_Visita"
         android:textColor="@color/cardview_light_background"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Provas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/botao"
+        android:ellipsize="start"
+        android:text="@string/btn_Provas"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_Tour" />
+
+    <Button
+        android:id="@+id/btn_TV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="39dp"
+        android:layout_marginEnd="48dp"
+        android:background="@drawable/botao"
+        android:ellipsize="start"
+        android:text="@string/btn_TV"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Provas" />
 
 
 </android.support.constraint.ConstraintLayout>

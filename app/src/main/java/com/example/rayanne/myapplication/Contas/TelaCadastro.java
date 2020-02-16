@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -44,7 +45,7 @@ public class TelaCadastro extends AppCompatActivity {
 
     //private static String URL_REGIST = "http://192.168.2.4/teste/confirmCadastro.php";
     //private static String URL_REGIST = "http://rolenoifapp.epizy.com/confirmCadastro.php";
-    private static String URL_REGIST = "http://rolenoifapp.000webhostapp.com/confirmCadastro.php";
+    private static String URL_REGIST = "https://rolenoifapp.000webhostapp.com/cadastro.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +109,12 @@ public class TelaCadastro extends AppCompatActivity {
                                 intent.setClass(TelaCadastro.this, PagMenu.class);
                                 startActivity(intent);
                                 finish();
+                            }
+                            else if (code.equals("cadastrado")){
+                                Toast.makeText(getApplicationContext(), "Email: " + emailUser + " já cadastrado!",
+                                        Toast.LENGTH_LONG).show();
+                                ButtonCadastro.setVisibility(View.VISIBLE);
+
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

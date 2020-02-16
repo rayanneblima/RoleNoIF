@@ -5,14 +5,12 @@
         $emailUser = $_POST['emailUser'];
 		$senhaUser = $_POST['senhaUser'];
 		
-		//TODO: senhaUser do POST deve ser encriptografada e comparada com a senhaUser do BD
-		
 		if ($_POST['emailUser'] && $_POST['senhaUser']){
 			$resultado = mysqli_query($conexao, "SELECT * FROM tblusers");
 			$linhas = mysqli_num_rows($resultado);
 			
 			while($linhas = mysqli_fetch_array($resultado)){
-				if ($linhas['emailUser'] == $emailUser && $linhas['senhaUser'] == $senhaUser) {
+				if ($linhas['emailUser'] == $emailUser && password_verify($senhaUser, $linhas['senhaUser'])) {
 					$_SESSION['conectado'] = 1;
 					$_SESSION['idUser'] = $linhas['idUser'];  
 					$_SESSION['emailUser'] = $linhas['emailUser'];  

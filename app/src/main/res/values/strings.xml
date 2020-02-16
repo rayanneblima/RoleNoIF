@@ -8,14 +8,16 @@
     <string name="bem_vindo">Seja Bem-Vindo!</string>
     <string name="suc_cadastro">Cadastrado com sucesso.</string>
 
-    <string name="btn_TV">Qual Curso Técnico Integrado mais combina com você?</string>
-    <string name="btn_Agro">Conheça o curso de agropecuária</string>
+    <string name="btn_TV">Qual Curso Técnico mais combina com você?</string>
+    <string name="btn_Agro">Conheça o curso de Agropecuária</string>
     <string name="btn_Tour">Tour pelo IF</string>
-    <string name="btn_Visita">Agende uma visita</string>
+    <string name="btn_Visita">Agende uma Visita</string>
 
     <string name="txt_Titulo">Qual Curso Técnico Integrado mais combina com você?</string>
     <string name="txt_Resumo">Dúvida sobre qual curso escolher? Faça o teste e descubra qual sugestão temos pra você.</string>
     <string name="btn_Iniciar">INICIAR</string>
     <string name="branco_cadastro">Preencha todos os campos!</string>
+    <string name="btn_Provas">Exemplos de Provas</string>
+    <string name="btn_Cursos">Cursos Técnicos do IF - RP</string>
 
 </resources>

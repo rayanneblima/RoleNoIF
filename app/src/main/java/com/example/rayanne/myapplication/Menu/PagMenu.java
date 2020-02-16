@@ -18,13 +18,12 @@ import com.facebook.AccessToken;
 public class PagMenu extends AppCompatActivity {
     //TODO: conferir o private (segurança) dos campos
     //TODO: mudar ordem dos botoes dando enfase na Tour
-    //TODO: iniciarAgro da lugar a iniciarCursos (exemplo), com pagina para escolha
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagmenu);
         iniciarTeste();
-        iniciarAgro();
+        iniciarCursos();
         iniciarTour();
         agendarVisita();
     }
@@ -64,14 +63,14 @@ public class PagMenu extends AppCompatActivity {
         });
     }
 
-    private void iniciarAgro(){
-        Button btn_Agro = findViewById(R.id.btn_Agro);
+    private void iniciarCursos(){
+        Button btn_Cursos = findViewById(R.id.btn_Cursos);
 
-        btn_Agro.setOnClickListener(new View.OnClickListener() {
+        btn_Cursos.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PagMenu.this, PaginaAgro.class);
+                Intent intent = new Intent(PagMenu.this, PaginaCursos.class);
                 startActivity(intent);
             }
         });
