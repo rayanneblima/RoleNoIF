@@ -19,5 +19,8 @@
     <string name="branco_cadastro">Preencha todos os campos!</string>
     <string name="btn_Provas">Exemplos de Provas</string>
     <string name="btn_Cursos">Cursos Técnicos do IF - RP</string>
+    <string name="btnP1">Prova do Processo Seletivo 2019</string>
+    <string name="btnP2">Prova do Processo Seletivo 2018</string>
+    <string name="btnP3">Prova do Processo Seletivo 2017</string>
 
 </resources>

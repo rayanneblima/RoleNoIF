@@ -24,6 +24,7 @@ public class PagMenu extends AppCompatActivity {
         setContentView(R.layout.activity_pagmenu);
         iniciarTeste();
         iniciarCursos();
+        iniciarProvas();
         iniciarTour();
         agendarVisita();
     }
@@ -48,6 +49,19 @@ public class PagMenu extends AppCompatActivity {
             finish();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void iniciarProvas(){
+        Button btn_Provas = findViewById(R.id.btn_Provas);
+
+        btn_Provas.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PagMenu.this, PaginaProvas.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void iniciarTeste(){

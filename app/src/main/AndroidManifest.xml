@@ -40,6 +40,9 @@
         <activity android:name=".Menu.PaginaAgro">
         </activity>
 
+        <activity android:name=".Menu.PaginaProvas">
+        </activity>
+
         <activity android:name=".Menu.PaginaCursos">
         </activity>
 
