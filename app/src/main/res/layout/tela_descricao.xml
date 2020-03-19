@@ -45,6 +45,7 @@
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/rtBar"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -122,6 +123,18 @@ Neste curso, você aprende não apenas sobre criação de animais e produção v
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/botao"
                 android:text="Mais informações"
+                android:textColor="@color/cardview_light_background"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btnMaterias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/botao"
+                android:text="Matérias"
                 android:textColor="@color/cardview_light_background"
                 android:textSize="18sp" />
 

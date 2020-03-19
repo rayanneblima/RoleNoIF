@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rayanne.myapplication.ConteudoAgro.CarreiraAgro;
 import com.example.rayanne.myapplication.ConteudoAgro.ConverseAgro;
@@ -21,12 +22,15 @@ import com.example.rayanne.myapplication.ConteudoAgro.MateriasAgro;
 import com.example.rayanne.myapplication.ConteudoAgro.SeisCoisasAgro;
 import com.example.rayanne.myapplication.Others.OnSwipeTouchListener;
 import com.example.rayanne.myapplication.R;
+import com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos;
+import com.example.rayanne.myapplication.TesteVocacional.PagDescricao;
 
 import java.text.Normalizer;
 
 public class PaginaAgro extends AppCompatActivity {
     //TODO: conferir o private (segurança) dos campos
     //TODO: usar todo o conteúdo de agro como pagina unica pros demais cursos, só passando o nome do curso e modificando onde necessario
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,16 +58,23 @@ public class PaginaAgro extends AppCompatActivity {
     }
 
     private void iniciarMateriasAgro(){
+        final Intent intent = getIntent();
+        //Recuperei a string da outra activity
+        String nomeCurso = intent.getStringExtra("Curso");
+        Toast.makeText(PaginaAgro.this, "Info: " + nomeCurso, Toast.LENGTH_SHORT).show();
         Button btn_materiasAgro = findViewById(R.id.btn_materiasAgro);
 
         btn_materiasAgro.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                String nomeCurso = DescricaoCursos.nomeCursos[0];
                 Intent intent = new Intent(PaginaAgro.this, MateriasAgro.class);
+                intent.putExtra("Curso", nomeCurso);
                 startActivity(intent);
             }
         });
+
     }
 
     private void iniciarDepoimentosAgro(){

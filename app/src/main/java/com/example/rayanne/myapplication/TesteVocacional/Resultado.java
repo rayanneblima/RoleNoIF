@@ -175,7 +175,7 @@ public class Resultado extends AppCompatActivity {
 
     }
 
-    //Botões que direciona o usuário para a área do curso
+    //Botões que direcionam o usuário para a área do curso
     private void paginaCurso() {
         //Curso Tec. em Agropecuária
         Button btnAgro = findViewById(R.id.btnAgro);

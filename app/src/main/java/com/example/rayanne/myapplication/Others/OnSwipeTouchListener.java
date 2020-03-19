@@ -21,6 +21,7 @@ public class OnSwipeTouchListener implements OnTouchListener {
 
     public void onSwipeRight() {
     }
+
     // "Ao tocar" (?)
     @SuppressLint("ClickableViewAccessibility")
     public boolean onTouch(View v, MotionEvent event) {

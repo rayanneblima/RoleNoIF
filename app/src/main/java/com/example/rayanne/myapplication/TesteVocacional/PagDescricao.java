@@ -6,9 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.rayanne.myapplication.ConteudoAgro.MateriasAgro;
 import com.example.rayanne.myapplication.Menu.PaginaAgro;
 import com.example.rayanne.myapplication.R;
 
@@ -28,6 +30,8 @@ public class PagDescricao extends AppCompatActivity {
     private TextView txtEtc;
     private ImageView imgCurso;
     private Button btnAgroMenu;
+    private Button btnMaterias;
+    private RatingBar rtBar;
 
 
     @Override
@@ -48,6 +52,14 @@ public class PagDescricao extends AppCompatActivity {
         txtEtc = findViewById(R.id.txtEtc);
         imgCurso = findViewById(R.id.imgCurso);
         btnAgroMenu = findViewById(R.id.btnAgroMenu);
+        btnMaterias = findViewById(R.id.btnMaterias);
+        rtBar = findViewById(R.id.rtBar);
+        rtBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+
+            }
+        });
 
     }
 
@@ -57,11 +69,15 @@ public class PagDescricao extends AppCompatActivity {
         txtModalidade.setVisibility(View.GONE);
         txtQuem.setVisibility(View.GONE);
         txtEtc.setVisibility(View.GONE);
+        btnMaterias.setVisibility(View.GONE);
+        rtBar.setVisibility(View.GONE);
         btnAgroMenu.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+                String nomeCurso = DescricaoCursos.nomeCursos[0];
                 Intent intent = new Intent(PagDescricao.this, PaginaAgro.class);
+                intent.putExtra("Curso", nomeCurso);
                 startActivity(intent);
             }
         });
@@ -70,7 +86,7 @@ public class PagDescricao extends AppCompatActivity {
 
     private void pegaCurso(){
         //Pega a intent de outra activity
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         //Recuperei a string da outra activity
         String nomeCurso = intent.getStringExtra("Curso");
         Toast.makeText(PagDescricao.this, "Info: " + nomeCurso, Toast.LENGTH_SHORT).show();
@@ -84,6 +100,16 @@ public class PagDescricao extends AppCompatActivity {
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(1));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.tal);
+            btnMaterias.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    String nomeCurso = DescricaoCursos.nomeCursos[1];
+                    Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
+                    intent.putExtra("Curso", nomeCurso);
+                    startActivity(intent);
+                }
+            });
 
         }
 
@@ -92,6 +118,16 @@ public class PagDescricao extends AppCompatActivity {
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(2));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.ti);
+            btnMaterias.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    String nomeCurso = DescricaoCursos.nomeCursos[2];
+                    Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
+                    intent.putExtra("Curso", nomeCurso);
+                    startActivity(intent);
+                }
+            });
 
         }
 
@@ -100,6 +136,16 @@ public class PagDescricao extends AppCompatActivity {
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(3));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.tmb);
+            btnMaterias.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    String nomeCurso = DescricaoCursos.nomeCursos[3];
+                    Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
+                    intent.putExtra("Curso", nomeCurso);
+                    startActivity(intent);
+                }
+            });
 
         }
 
@@ -108,6 +154,16 @@ public class PagDescricao extends AppCompatActivity {
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(4));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.tz);
+            btnMaterias.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                    String nomeCurso = DescricaoCursos.nomeCursos[4];
+                    Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
+                    intent.putExtra("Curso", nomeCurso);
+                    startActivity(intent);
+                }
+            });
 
         }else Toast.makeText(PagDescricao.this, "ERRO", Toast.LENGTH_SHORT).show();
 
@@ -120,6 +176,7 @@ public class PagDescricao extends AppCompatActivity {
         txtQuem.setVisibility(View.VISIBLE);
         txtEtc.setVisibility(View.VISIBLE);
         btnAgroMenu.setVisibility(View.GONE);
+        btnMaterias.setVisibility(View.VISIBLE);
     }
 
 }

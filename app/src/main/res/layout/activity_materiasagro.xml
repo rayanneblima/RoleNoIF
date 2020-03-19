@@ -21,7 +21,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MATÉRIAS DA AGROPECUÁRIA"
+                android:text="MATÉRIAS - Técnico em Agropecuária"
                 android:textStyle="bold"
                 android:fontFamily="sans-serif"
                 android:textSize="20sp"
@@ -67,11 +67,11 @@
 10 – Matemática\n
 11 – Física\n
 12 – Inglês\n\n
-Matérias do Técnico\n
+Matérias do Técnico\n\n
 13 - Tecnologia de Alimentos (Processamento de Carnes, Leite e Vegetais)\n
 14 – Planejamento e Projeto de Instalações Rurais\n
 15 – Introdução aos estudos e práticas em Agropecuária (IEPA)\n
-16 - Agricultura I (Solos + Biologia Vegetal, Propagação de Plantas e Jardinagem)"
+16 - Agricultura I (Solos + Biologia Vegetal, Propagação de Plantas e Jardinagem)\n\n"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textSize="18sp"
                     android:textAlignment="center"
@@ -100,21 +100,22 @@ Matérias do Técnico\n
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="
-1 - Língua Portuguesa Literatura e Redação\n
-2 – Educação Física\n
-3 – Geografia\n
-4 – História\n
-5 – Sociologia\n
-6 – Filosofia\n
-7 – Química\n
-8 – Biologia\n
-9 – Matemática\n
-10 – Física\n
-11 – Inglês\n\n
-Matérias do Técnico\n
+1 - Língua Portuguesa, Literatura e Redação\n
+2 – Espanhol\n
+3 – Educação Física\n
+4 – Geografia\n
+5 – História\n
+6 – Sociologia\n
+7 – Filosofia\n
+8 – Química\n
+9 – Biologia\n
+10 – Matemática\n
+11 – Física\n
+12 – Inglês\n\n
+Matérias do Técnico\n\n
 1 - Zootecnia I (Suinocultura + Avicultura)\n
 2 - Agricultura II (Fitossanidade, Olericultura e Culturas anuais)\n
-3 – Mecanização agrícola"
+3 – Mecanização agrícola\n\n"
                     android:textAppearance="@style/TextAppearance.AppCompat"
                     android:textSize="18sp"
                     android:textAlignment="center"
@@ -144,24 +145,25 @@ Matérias do Técnico\n
                     android:layout_height="wrap_content"
                     android:text="
 1 - Língua Portuguesa, Literatura e Redação\n
-2 – Educação Física\n
-3 – Geografia\n
-4 – História\n
-5 – Sociologia\n
-6 – Filosofia\n
-7 – Química\n
-8 – Biologia\n
-9 – Matemática\n
-10 – Física\n
-11 – Inglês\n\n
-Matérias do Técnico\n
+2 – Espanhol\n
+3 – Educação Física\n
+4 – Geografia\n
+5 – História\n
+6 – Sociologia\n
+7 – Filosofia\n
+8 – Química\n
+9 – Biologia\n
+10 – Matemática\n
+11 – Física\n
+12 – Inglês\n\n
+Matérias do Técnico\n\n
 1 – Fruticultura\n
 2 – Silvicultura e cafeicultura\n
 3 - Zootecnia II (Bovinocultura de Leite e Corte)\n
 4 – Irrigação\n
 5 - Agroecologia, Educação e Licenciamento Ambiental\n
 6 - Administração e Extensão Rural\n\n
-Matérias Optativas\n
+Matérias Optativas\n\n
 1 – Libras\n
 2 – Língua espanhola\n\n
 IMPORTANTE: Para obter o diploma, é obrigatório fazer ESTÁGIO.\n\n"
