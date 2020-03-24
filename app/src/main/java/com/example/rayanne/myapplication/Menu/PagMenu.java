@@ -14,16 +14,22 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.rayanne.myapplication.Contas.TelaLogin;
 import com.example.rayanne.myapplication.Contas.TelaPerfil;
+import com.example.rayanne.myapplication.MainActivity;
 import com.example.rayanne.myapplication.Others.OnSwipeTouchListener;
+import com.example.rayanne.myapplication.Others.SharedPref;
 import com.example.rayanne.myapplication.R;
 import com.facebook.AccessToken;
+import com.facebook.login.LoginManager;
 
 public class PagMenu extends AppCompatActivity {
     //TODO: conferir o private (segurança) dos campos
     //TODO: TROCAR AS FOTOS PRO TOUR
+
+    boolean session;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +39,23 @@ public class PagMenu extends AppCompatActivity {
         iniciarProvas();
         iniciarTour();
         agendarVisita();
+        SESSION();
+    }
+
+    public void SESSION() {
+        //Setando FALSE porque é o primeiro login
+        session = Boolean.parseBoolean(SharedPref.read(getApplicationContext(), "session", "false"));
+
+        if(!session) {
+            //Primeiro login ou logout
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            //Quando o usuario ja logou, assume valor TRUE
+            //Toast.makeText(this, "Login já realizado!", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     //Menu de "3 pontinhos"
@@ -46,15 +69,23 @@ public class PagMenu extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.user_profile){
-            //TODO: obter o perfil do usuario
             Intent intent = new Intent(this, TelaPerfil.class);
             startActivity(intent);
-        }
-        else{
-            //TODO: DESLOGAR USUARIO DO FB OU DA CONTA
             finish();
         }
+        else{
+            logout();
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    private void logout() {
+        LoginManager.getInstance().logOut();
+        Intent login = new Intent(PagMenu.this, TelaLogin.class);
+        startActivity(login);
+        finish();
+        SharedPref.save(getApplicationContext(), "session", "false");
     }
 
     private void iniciarProvas(){

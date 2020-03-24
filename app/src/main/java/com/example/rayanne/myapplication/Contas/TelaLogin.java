@@ -19,7 +19,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.rayanne.myapplication.MainActivity;
 import com.example.rayanne.myapplication.Menu.PagMenu;
+import com.example.rayanne.myapplication.Others.SharedPref;
 import com.example.rayanne.myapplication.R;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
@@ -64,10 +66,10 @@ public class TelaLogin extends AppCompatActivity {
         edtSenha = findViewById(R.id.edtSenha);
         entrarButton = findViewById(R.id.entrarButton);
 
-        //obterKeyHash();
         loginFB();
         loginbtnEntrar();
         cadastroUsuario();
+
     }
 
     /*public void obterKeyHash(){
@@ -100,14 +102,18 @@ public class TelaLogin extends AppCompatActivity {
         LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
-                goMainScreen();
-                //TODO: ARRUMAR O IF/ELSE
                 if (Profile.getCurrentProfile() != null) {
                     AccessToken accessToken = loginResult.getAccessToken();
+                    Toast.makeText(getApplicationContext(), "Aguarde.", Toast.LENGTH_SHORT).show();
+                    get_profile(accessToken);
+                    //Login OK, session = true
+                    SharedPref.save(getApplicationContext(), "session", "true");
                     Profile profile = Profile.getCurrentProfile();
                     String firstName = profile.getName();
                     Toast.makeText(getApplicationContext(), "Bem-vindo(a), " + firstName + "!", Toast.LENGTH_LONG).show();
-                    get_profile(accessToken);
+                    Intent intent = new Intent(TelaLogin.this, PagMenu.class);
+                    startActivity(intent);
+                    finish();
                 } else {
                     ProfileTracker profileTracker = new ProfileTracker() {
                         @Override
@@ -116,6 +122,10 @@ public class TelaLogin extends AppCompatActivity {
                             Profile.setCurrentProfile(currentProfile);
                             String firstName = currentProfile.getName();
                             Toast.makeText(getApplicationContext(), "Bem-vindo(a), " + firstName + "!", Toast.LENGTH_LONG).show();
+                            SharedPref.save(getApplicationContext(), "session", "true");
+                            Intent intent = new Intent(TelaLogin.this, PagMenu.class);
+                            startActivity(intent);
+                            finish();
                         }
                     };
                     profileTracker.startTracking();
@@ -135,46 +145,36 @@ public class TelaLogin extends AppCompatActivity {
 
     }
 
-    private void goMainScreen() {
-        Intent intent = new Intent(this, PagMenu.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-        finish();
-    }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
-    public void get_profile(AccessToken accessToken){
+    private void get_profile(AccessToken accessToken){
         GraphRequest request = GraphRequest.newMeRequest(
                 accessToken, new GraphRequest.GraphJSONObjectCallback() {
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
-                        Intent profileIntent = new Intent(TelaLogin.this, TelaPerfil
-                                .class);
+                        //Intent profileIntent = new Intent(MainActivity.this, Perfil.class);
                         try {
                             String userID = object.getString("id");
-                            profileIntent.putExtra("id", userID);
-                            String firstname = "";
-                            String lastname = "";
-                            String email = "";
+                            SharedPref.saveUserId(getApplicationContext(), "user id", userID);
+                            String firstname;
+                            String lastname;
+                            String email;
 
-                            if (object.has("first_name")) {
+                            if (object.has("first_name") && object.has("last_name")) {
                                 firstname = object.getString("first_name");
-                                profileIntent.putExtra("name", firstname);
-                            }
-                            if (object.has("last_name")) {
                                 lastname = object.getString("last_name");
-                                profileIntent.putExtra("lastname", lastname);
+                                SharedPref.saveUserName(getApplicationContext(), "user name", firstname + " " + lastname);
                             }
                             if (object.has("email")){
                                 email = object.getString("email");
-                                profileIntent.putExtra("email", email);
+                                SharedPref.saveUserEmail(getApplicationContext(), "user email", email);
                             }
-                            startActivity(profileIntent);
+                            //startActivity(profileIntent);
+
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -184,7 +184,6 @@ public class TelaLogin extends AppCompatActivity {
         parameters.putString("fields", "id, first_name, last_name, email");
         request.setParameters(parameters);
         request.executeAsync();
-
     }
 
     public void loginbtnEntrar(){
@@ -216,10 +215,9 @@ public class TelaLogin extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             String code = jsonObject.getString("code");
                             if (code.equals("sucess")){
-                                Toast.makeText(getApplicationContext(), "Seja Bem-Vindo(a)!",
-                                        Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent();
-                                intent.setClass(TelaLogin.this, PagMenu.class);
+                                Toast.makeText(getApplicationContext(), "Bem-vindo(a)!", Toast.LENGTH_LONG).show();
+                                SharedPref.save(getApplicationContext(), "session", "true");
+                                Intent intent = new Intent(TelaLogin.this, PagMenu.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -264,8 +262,15 @@ public class TelaLogin extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setClass(TelaLogin.this, TelaCadastro.class);
                 startActivity(intent);
+                finish();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 
 }

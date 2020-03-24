@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.rayanne.myapplication.Menu.PagMenu;
+import com.example.rayanne.myapplication.Others.SharedPref;
 import com.example.rayanne.myapplication.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -29,30 +30,29 @@ import org.json.JSONObject;
 
 public class TelaPerfil extends AppCompatActivity {
     //TODO: conferir o private (segurança) dos campos
+    //TODO: mostrando perfil do fb do ultimo a entrar (caso entre por cadastro)
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_perfil);
-        loginWithFB();
+        getProfile();
     }
 
-    private void loginWithFB() {
-        Intent intent = getIntent();
-        String userID = intent.getStringExtra("id");
-        String name = intent.getStringExtra("name");
-        String surname = intent.getStringExtra("lastname");
-        String email = intent.getStringExtra("email");
+    private void getProfile() {
+        String userID = SharedPref.readUserId(getApplicationContext(), "user id", " ");
+        String name = SharedPref.readUserName(getApplicationContext(), "user name", " ");
+        String email = SharedPref.readUserEmail(getApplicationContext(), "user email", " ");
 
         TextView id = findViewById(R.id.txtId);
         TextView nameView = findViewById(R.id.txtNome);
         TextView emailView = findViewById(R.id.txtEmail);
 
         id.setText(userID);
-        nameView.setText(" " + name + " " + surname);
+        nameView.setText(" " + name);
         emailView.setText(email);
 
         ProfilePictureView profilePicture = findViewById(R.id.profileImage);
         profilePicture.setProfileId(userID);
-
     }
 
     //Editar Perfil"
@@ -66,16 +66,26 @@ public class TelaPerfil extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.edit_profile){
-            Intent intent = new Intent(TelaPerfil.this, TelaEditPerfil.class);
-            startActivity(intent);
+            //Intent intent = new Intent(TelaPerfil.this, TelaEditPerfil.class);
+            //startActivity(intent);
+            Toast.makeText(getApplicationContext(), "Opção em desenvolvimento!", Toast.LENGTH_LONG).show();
         }
         if (id == R.id.logout){
             LoginManager.getInstance().logOut();
             Intent login = new Intent(TelaPerfil.this, TelaLogin.class);
             startActivity(login);
             finish();
+            SharedPref.save(getApplicationContext(), "session", "false");
+            Toast.makeText(getApplicationContext(), "Desconectado com sucesso!", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent login = new Intent(TelaPerfil.this, PagMenu.class);
+        startActivity(login);
     }
 
 }

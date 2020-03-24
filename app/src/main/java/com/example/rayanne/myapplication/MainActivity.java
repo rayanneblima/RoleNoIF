@@ -9,10 +9,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.rayanne.myapplication.Contas.TelaLogin;
+import com.example.rayanne.myapplication.Menu.PagMenu;
+import com.example.rayanne.myapplication.Others.SharedPref;
 
 public class MainActivity extends AppCompatActivity {
+
 
     public void onAttachedToWindow() {
         super.onAttachedToWindow();
@@ -28,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
         StartAnimations();
-
     }
 
     private void StartAnimations() {

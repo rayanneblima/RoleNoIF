@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.rayanne.myapplication.Menu.PagMenu;
+import com.example.rayanne.myapplication.Others.SharedPref;
 import com.example.rayanne.myapplication.R;
 
 import org.json.JSONArray;
@@ -36,7 +37,7 @@ import java.util.Map;
 public class TelaCadastro extends AppCompatActivity {
     //TODO: dar a opçao de cadastro com o fb, pegando os dados e facilitando o cadastro.
     //TODO: verificar se a matricula corresponde a um aluno do IF
-    //TODO: verificar se email e telefone ja foram cadastrados (PHP)
+    //TODO: verificar se email e telefone ja foram cadastrados (PHP) ----OK?
     //TODO: melhorar os toast de mensagem
     //TODO: conferir o private (segurança) dos campos
 
@@ -103,10 +104,9 @@ public class TelaCadastro extends AppCompatActivity {
                             JSONObject jsonObject = new JSONObject(response);
                             String code = jsonObject.getString("code");
                             if (code.equals("sucess")){
-                                Toast.makeText(getApplicationContext(), "Seja Bem-Vindo, " + nomeUser + "!",
-                                        Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent();
-                                intent.setClass(TelaCadastro.this, PagMenu.class);
+                                Toast.makeText(getApplicationContext(), "Bem-vindo(a), " + nomeUser + "!", Toast.LENGTH_LONG).show();
+                                SharedPref.save(getApplicationContext(), "session", "true");
+                                Intent intent = new Intent(TelaCadastro.this, PagMenu.class);
                                 startActivity(intent);
                                 finish();
                             }
@@ -114,7 +114,6 @@ public class TelaCadastro extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(), "Email: " + emailUser + " já cadastrado!",
                                         Toast.LENGTH_LONG).show();
                                 ButtonCadastro.setVisibility(View.VISIBLE);
-
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -179,7 +178,12 @@ public class TelaCadastro extends AppCompatActivity {
         builder.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface arg0, int arg1) {
                 finish();
-                Toast.makeText(getApplicationContext(), "Seu cadastro foi cancelado!", Toast.LENGTH_LONG).show();            }
+                Toast.makeText(getApplicationContext(), "Seu cadastro foi cancelado!", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent();
+                intent.setClass(TelaCadastro.this, TelaLogin.class);
+                startActivity(intent);
+
+            }
         });
         //define um botão como negativo.
         builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
