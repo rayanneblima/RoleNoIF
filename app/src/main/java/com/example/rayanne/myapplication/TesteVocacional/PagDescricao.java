@@ -10,16 +10,31 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.rayanne.myapplication.Contas.TelaCadastro;
 import com.example.rayanne.myapplication.ConteudoAgro.MateriasAgro;
+import com.example.rayanne.myapplication.Menu.PagMenu;
 import com.example.rayanne.myapplication.Menu.PaginaAgro;
+import com.example.rayanne.myapplication.Others.SharedPref;
 import com.example.rayanne.myapplication.R;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.content.Intent.getIntent;
 
 public class PagDescricao extends AppCompatActivity {
     //TODO: conferir o private (segurança) dos campos
-
-    private DescricaoCursos DescricaoCursos = new DescricaoCursos();
+    //TODO: permitir que o usuário só vote uma vez
+    //TODO: mostrar a nota dada na pagina do curso
 
     private TextView txtCurso;
     private TextView txtDuracao;
@@ -33,6 +48,7 @@ public class PagDescricao extends AppCompatActivity {
     private Button btnMaterias;
     private RatingBar rtBar;
 
+    private static String URL_REGIST = "https://rolenoifapp.000webhostapp.com/cadastroNota.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,12 +70,6 @@ public class PagDescricao extends AppCompatActivity {
         btnAgroMenu = findViewById(R.id.btnAgroMenu);
         btnMaterias = findViewById(R.id.btnMaterias);
         rtBar = findViewById(R.id.rtBar);
-        rtBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-
-            }
-        });
 
     }
 
@@ -70,12 +80,11 @@ public class PagDescricao extends AppCompatActivity {
         txtQuem.setVisibility(View.GONE);
         txtEtc.setVisibility(View.GONE);
         btnMaterias.setVisibility(View.GONE);
-        rtBar.setVisibility(View.GONE);
         btnAgroMenu.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                String nomeCurso = DescricaoCursos.nomeCursos[0];
+                String nomeCurso = com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.nomeCursos[0];
                 Intent intent = new Intent(PagDescricao.this, PaginaAgro.class);
                 intent.putExtra("Curso", nomeCurso);
                 startActivity(intent);
@@ -93,18 +102,20 @@ public class PagDescricao extends AppCompatActivity {
 
         if (nomeCurso.equals(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(0))){
             paraAgro();
+            darNota(nomeCurso);
         }
 
         else if (nomeCurso.equals(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(1))){
             txtCurso.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(1));
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(1));
             ocultarCampos();
+            darNota(nomeCurso);
             imgCurso.setBackgroundResource(R.drawable.tal);
             btnMaterias.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    String nomeCurso = DescricaoCursos.nomeCursos[1];
+                    String nomeCurso = com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.nomeCursos[1];
                     Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
                     intent.putExtra("Curso", nomeCurso);
                     startActivity(intent);
@@ -117,12 +128,13 @@ public class PagDescricao extends AppCompatActivity {
             txtCurso.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(2));
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(2));
             ocultarCampos();
+            darNota(nomeCurso);
             imgCurso.setBackgroundResource(R.drawable.ti);
             btnMaterias.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    String nomeCurso = DescricaoCursos.nomeCursos[2];
+                    String nomeCurso = com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.nomeCursos[2];
                     Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
                     intent.putExtra("Curso", nomeCurso);
                     startActivity(intent);
@@ -135,12 +147,13 @@ public class PagDescricao extends AppCompatActivity {
             txtCurso.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getnomeCursos(3));
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(3));
             ocultarCampos();
+            darNota(nomeCurso);
             imgCurso.setBackgroundResource(R.drawable.tmb);
             btnMaterias.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    String nomeCurso = DescricaoCursos.nomeCursos[3];
+                    String nomeCurso = com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.nomeCursos[3];
                     Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
                     intent.putExtra("Curso", nomeCurso);
                     startActivity(intent);
@@ -154,11 +167,12 @@ public class PagDescricao extends AppCompatActivity {
             txtDesc.setText(com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.getdescricaoCursos(4));
             ocultarCampos();
             imgCurso.setBackgroundResource(R.drawable.tz);
+            darNota(nomeCurso);
             btnMaterias.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                    String nomeCurso = DescricaoCursos.nomeCursos[4];
+                    String nomeCurso = com.example.rayanne.myapplication.TesteVocacional.DescricaoCursos.nomeCursos[4];
                     Intent intent = new Intent(PagDescricao.this, MateriasAgro.class);
                     intent.putExtra("Curso", nomeCurso);
                     startActivity(intent);
@@ -167,6 +181,67 @@ public class PagDescricao extends AppCompatActivity {
 
         }else Toast.makeText(PagDescricao.this, "ERRO", Toast.LENGTH_SHORT).show();
 
+    }
+
+    private void darNota(final String nomeCurso) {
+        rtBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                String emailUser = SharedPref.readUserEmail(getApplicationContext(), "user email", " ");
+                notaBD(emailUser, nomeCurso, rating);
+                SharedPref.saveNota(getApplicationContext(), "nota", "true");
+            }
+        });
+    }
+
+    private void notaBD(final String emailUser, final String nomeCurso, final Float notaCurso) {
+
+        // StringRequest() começa aqui
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL_REGIST,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse( String response) {
+                        //Toast.makeText(getApplicationContext(), response, Toast.LENGTH_LONG).show();
+                        try{
+                            JSONObject jsonObject = new JSONObject(response);
+                            String code = jsonObject.getString("code");
+                            if (code.equals("sucess")) {
+                                Toast.makeText(getApplicationContext(), "Nota cadastrada!", Toast.LENGTH_LONG).show();
+                                SharedPref.saveNota(getApplicationContext(), "nota", "true");
+                            }
+                            else {
+                                Toast.makeText(getApplicationContext(), "Erro ao salvar nota!",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                            Toast.makeText(getApplicationContext(), "Erro ao cadastrar!", Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getApplicationContext(), "ERROR: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), "Erro no cadastro!", Toast.LENGTH_SHORT).show();
+                        error.printStackTrace();
+                    }
+                }
+        ){
+            @Override
+            protected Map<String, String> getParams() {
+                // Cria um mapa p/ Criptografia
+                Map<String, String> params = new HashMap<>();
+                params.put("emailUser", emailUser);
+                params.put("nomeCurso", nomeCurso);
+                params.put("notaCurso", String.valueOf(notaCurso));
+                return params;
+            }
+
+        };
+        // StringRequest() acaba aqui --------------------------------------------------------------------------
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
     private void ocultarCampos(){

@@ -53,5 +53,11 @@ public class SharedPref {
         return s.getString(name, defaultvalue);
     }
 
+    public static void saveNota(Context context, String name, String value) {
+        SharedPreferences s = context.getSharedPreferences("nota", Context.MODE_PRIVATE);
+        SharedPreferences.Editor edt = s.edit();
+        edt.putString(name, value);
+        edt.apply();
+    }
 
 }
