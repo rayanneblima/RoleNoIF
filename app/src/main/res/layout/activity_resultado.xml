@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -27,6 +27,7 @@
             android:layout_marginTop="10sp"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Você combina com o curso:"
+            android:textColor="#000000"
             android:textSize="18sp" />
 
         <TextView
@@ -36,6 +37,7 @@
             android:fontFamily="sans-serif"
             android:text="(Clique abaixo e conheça mais)"
             android:textAllCaps="false"
+            android:textColor="#000000"
             android:textSize="15sp" />
 
 
@@ -62,6 +64,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Mas também pode gostar do curso de  "
+                android:textColor="#000000"
                 android:textSize="18sp" />
 
             <Button
@@ -96,6 +99,7 @@
             android:layout_gravity="center"
             android:fontFamily="sans-serif-smallcaps"
             android:text="Clique para conhecer os cursos Técnicos do IF - Rio Pomba: "
+            android:textColor="#000000"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -156,4 +160,4 @@
     </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

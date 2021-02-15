@@ -1,92 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@drawable/background">
 
     <!--TODO: colocar o site da copese como LINK -->
 
-    <Button
-        android:id="@+id/btnP19"
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="9dp"
-        android:background="@drawable/botao"
-        android:padding="8dp"
-        android:text="@string/btnP1"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnP18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:background="@drawable/botao"
-        android:padding="8dp"
-        android:text="@string/btnP2"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/btnP19"
-        app:layout_constraintTop_toBottomOf="@+id/btnP19" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btnP17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:background="@drawable/botao"
-        android:padding="8dp"
-        android:text="@string/btnP3"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/btnP18" />
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Últimas Provas"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
-        android:padding="20sp"
-        android:text="  Aqui você encontra as provas dos três últimos processos seletivos do IF Sudeste MG. Elas foram aplicadas aos candidatos de todos os cursos técnicos integrados. Confira:"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:padding="20sp"
+                android:text="  Aqui você encontra as provas dos três últimos processos seletivos do IF Sudeste MG. Elas foram aplicadas aos candidatos de todos os cursos técnicos integrados. Confira:"
+                android:textColor="#000000"
+                android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"
-        android:fontFamily="sans-serif"
-        android:text="Últimas Provas"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnP19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/botao"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/btnP1"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnP17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/botao"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/btnP3"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18sp" />
+
+                <Button
+                    android:id="@+id/btnP18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20sp"
+                    android:background="@drawable/botao"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/btnP2"
+                    android:textColor="@color/cardview_light_background"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20sp"
+                android:text="  O IF Sudeste MG realiza processos seletivos todos os anos, normalmente com inscrições a partir de setembro. Informe-se aqui: copese.ifsudestemg.edu.br"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="97dp"
-        android:layout_marginBottom="100dp"
-        android:padding="20sp"
-        android:text="  O IF Sudeste MG realiza processos seletivos todos os anos, normalmente com inscrições a partir de setembro. Informe-se aqui: copese.ifsudestemg.edu.br"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnP18" />
-
-
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

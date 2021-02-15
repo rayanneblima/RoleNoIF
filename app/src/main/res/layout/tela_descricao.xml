@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
@@ -31,6 +31,7 @@
                 android:layout_gravity="center"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Técnico em Agropecuária"
+                android:textColor="#000000"
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -43,10 +44,12 @@
                 android:background="@drawable/ta" />
 
             <RatingBar
+                android:id="@+id/rtBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rtBar"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                android:progressBackgroundTint="@color/divider"
+                android:progressTint="@color/primary" />
 
             <TextView
                 android:id="@+id/txtDesc"
@@ -54,6 +57,7 @@
                 android:layout_height="wrap_content"
                 android:text="      Já se imaginou com a enxada na mão, né? Calma... A Agropecuária pode te surpreender.
 Neste curso, você aprende não apenas sobre criação de animais e produção vegetal, mas também sobre a agroindústria. Assim, depois de formado, poderá trabalhar com projetos de propriedades rurais, acompanhar a criação de novos produtos, orientar o trabalho nas indústrias e até lidar com máquinas agrícolas. Vamos dar um rolê pela Agro?"
+                android:textColor="#000000"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -66,6 +70,7 @@ Neste curso, você aprende não apenas sobre criação de animais e produção v
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Duração: 3 anos"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -77,6 +82,7 @@ Neste curso, você aprende não apenas sobre criação de animais e produção v
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Vagas: 40 por ano"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -88,6 +94,7 @@ Neste curso, você aprende não apenas sobre criação de animais e produção v
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Modalidade: integrado"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -99,6 +106,7 @@ Neste curso, você aprende não apenas sobre criação de animais e produção v
                 android:layout_marginTop="10dp"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="Quem pode cursar: quem já terminou ou está terminando o 9º ano do Ensino Fundamental"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -111,6 +119,7 @@ Neste curso, você aprende não apenas sobre criação de animais e produção v
                 android:layout_marginBottom="20dp"
                 android:fontFamily="casual"
                 android:text="Mais informações em breve!"
+                android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -143,4 +152,4 @@ Neste curso, você aprende não apenas sobre criação de animais e produção v
     </ScrollView>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

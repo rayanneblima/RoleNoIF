@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,83 +10,80 @@
 
     <!--TODO: Generalizar os cursos-->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
 
-    <Button
-        android:id="@+id/btn_Cursos"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="151dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/botao"
-        android:text="@string/btn_Cursos"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_TV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48sp"
+            android:layout_marginEnd="48sp"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/botao"
+            android:ellipsize="start"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/btn_TV"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btn_Tour"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/botao"
-        android:text="@string/btn_Tour"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Cursos" />
+        <Button
+            android:id="@+id/btn_Cursos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48sp"
+            android:layout_marginEnd="48sp"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/botao"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/btn_Cursos"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btn_Visita"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="119dp"
-        android:background="@drawable/botao"
-        android:text="@string/btn_Visita"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/btn_Tour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48sp"
+            android:layout_marginEnd="48sp"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/botao"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/btn_Tour"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btn_Provas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/botao"
-        android:ellipsize="start"
-        android:text="@string/btn_Provas"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Tour" />
+        <Button
+            android:id="@+id/btn_Provas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48sp"
+            android:layout_marginEnd="48sp"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/botao"
+            android:ellipsize="start"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/btn_Provas"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp" />
 
-    <Button
-        android:id="@+id/btn_TV"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="39dp"
-        android:layout_marginEnd="48dp"
-        android:background="@drawable/botao"
-        android:ellipsize="start"
-        android:text="@string/btn_TV"
-        android:textColor="@color/cardview_light_background"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_Provas" />
+        <Button
+            android:id="@+id/btn_Visita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48sp"
+            android:layout_marginEnd="48sp"
+            android:layout_marginBottom="20sp"
+            android:background="@drawable/botao"
+            android:gravity="center|center_horizontal|center_vertical"
+            android:text="@string/btn_Visita"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="18sp" />
+    </LinearLayout>
 
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
